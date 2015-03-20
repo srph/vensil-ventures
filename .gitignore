@@ -1,3 +1,7 @@
+# Exclude build files (for now)
+dist/*.js
+dist/*.*.js
+
 # Logs
 logs
 *.log
