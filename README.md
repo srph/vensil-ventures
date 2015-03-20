@@ -12,23 +12,27 @@ Feel free to [submit an issue](https://github.com/srph/vensil-ventures/issues/) 
 - Node.js
 - npm
 
-Simply clone the repository, install the dependencies, and get yourself a web server.
+Simply clone the repository, and install the dependencies.
 
 ```bash
 $ git clone https://github.com/srph/vensil-ventures && cd vensil-ventures
 $ npm install
-$
 ```
 
 ### Automation
 
-Ensure that you are in the project root directory .
+Ensure that you are in the project root directory.
 
 ```bash
 $ npm test # run the tests
-$ npm build # build the scripts
-$ npm watch # watch for file changes (builds each time)
-# npm prod # build the scripts for production (minification)
+$ npm run build # build the scripts
+$ npm run watch # watch for file changes (builds each time)
+$ npm run prod # build the scripts for production (minification)
+# starts a built-in web server (serving on http://0.0.0.0:8080)
+# to customize options (port used, etc), check `indexzero/http-server`
+# https://github.com/indexzero/http-server. feel free to use your own.
+$ npm run serve
+$ npm run start # for development. runs `watch` and `serve`
 ```
 
 ## Acknowledgement
