@@ -1,0 +1,29 @@
+{
+  "name": "vensil-ventures",
+  "version": "1.0.0",
+  "description": "Website for Vensil Ventures, built with ReactJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srph/vensil-ventures.git"
+  },
+  "author": "srph <seraphipod@gmail.com> (https://srph.github.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srph/vensil-ventures/issues"
+  },
+  "homepage": "https://github.com/srph/vensil-ventures",
+  "devDependencies": {
+    "babel": "^4.7.12",
+    "jest": "^0.1.39",
+    "webpack": "^1.7.3"
+  },
+  "dependencies": {
+    "object-assign": "^2.0.0",
+    "radium": "^0.10.0",
+    "react": "^0.12.2"
+  }
+}
