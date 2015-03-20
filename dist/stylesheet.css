@@ -1,0 +1,50 @@
+/**
+ * Headers
+ * @reference http://getbootstrap.com/css#typography */
+h1, .h1 { font-size: 36px; }
+h2, .h2 { font-size: 30px; }
+h3, .h3 { font-size: 24px; }
+h4, .h4 { font-size: 18px; }
+h5, .h5 { font-size: 14px; }
+h6, .h6 { font-size: 12px; }
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Bitter', serif, sans-serif;
+	font-weight: 500;
+}
+
+.h1, .h2, .h3,
+h1, h2, h3 {
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+h4, h5, h6 {
+	margin-top: 10px;
+	margin-bottom: 2.5px;
+}
+
+/**
+ * Utilities */
+
+.u-text .-left { text-align: left; }
+.u-text .-center { text-align: center; }
+.u-text .-right { text-align: right; }
+
+.u-text .-uppercase { text-transform: uppercase; }
+.u-text .-line-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/**
+ * Positioning shit */
+.u-pull-left { float: 'left'; }
+.u-pull-right { float: 'right'; }
+/**
+ * Contain floats
+ * http://nicolasgallagher.com/micro-clearfix-hack/ */
+.u-clearfix:before, .u-clearfix:after { content: ""; display: table; }
+.u-clearfix:after { clear: both; }
