@@ -1,10 +1,10 @@
-# vensil-ventures [![Build Status](https://travis-ci.org/srph/vensil-ventures.svg?branch=master)](https://travis-ci.org/srph/vensil-ventures?branch=master) [![Dependencies Status](https://david-dm.org/srph/vensil-ventures.svg)](https://david-dm.org/srph/vensil-ventures.svg) [![devDependency Status](https://david-dm.org/srph/vensil-ventures/dev-status.svg)](https://david-dm.org/cdnjs/cdnjs#info=devDependencies)
+# vensils-ventures [![Build Status](https://travis-ci.org/srph/vensils-ventures.svg?branch=master)](https://travis-ci.org/srph/vensils-ventures?branch=master) [![Dependencies Status](https://david-dm.org/srph/vensils-ventures.svg)](https://david-dm.org/srph/vensils-ventures.svg) [![devDependency Status](https://david-dm.org/srph/vensils-ventures/dev-status.svg)](https://david-dm.org/cdnjs/cdnjs#info=devDependencies)
 
-Website for Vensil Ventures, built with ReactJS.
+Website for Vensil's Ventures Photobooth, built with ReactJS.
 
 ## Contribution
 
-Feel free to [submit an issue](https://github.com/srph/vensil-ventures/issues/) regarding any question, inquiry, or suggestion.
+Feel free to [submit an issue](https://github.com/srph/vensils-ventures/issues/) regarding any question, inquiry, or suggestion.
 
 ### Building
 
@@ -15,7 +15,7 @@ Feel free to [submit an issue](https://github.com/srph/vensil-ventures/issues/) 
 Simply clone the repository, and install the dependencies.
 
 ```bash
-$ git clone https://github.com/srph/vensil-ventures && cd vensil-ventures
+$ git clone https://github.com/srph/vensils-ventures && cd vensils-ventures
 $ npm install
 ```
 
@@ -37,7 +37,7 @@ $ npm run start # for development. runs `watch` and `serve`
 
 ## Acknowledgement
 
-**vensil-ventures** © 2015+, Kier Borromeo (srph) and [Vensil Ventures Photo Booth](https://www.facebook.com/vensilsventuresPHOTOBOOTH).
+**vensils-ventures** © 2015+, Kier Borromeo (srph) and [Vensil's Ventures Photo Booth](https://www.facebook.com/vensilsventuresPHOTOBOOTH).
 
 > [srph.github.io](http://srph.github.io) &nbsp;&middot;&nbsp;
 > GitHub [@srph](https://github.com/srph) &nbsp;&middot;&nbsp;
