@@ -42,6 +42,6 @@ $ npm run start # for development. runs `watch` and `serve`
 > [srph.github.io](http://srph.github.io) &nbsp;&middot;&nbsp;
 > GitHub [@srph](https://github.com/srph) &nbsp;&middot;&nbsp;
 > Twitter [@_srph](https://twitter.com/_srph)
-> Twitter [@spidermaen](https://twitter.com/spidermaen)
+> Twitter [@spidermaen_](https://twitter.com/spidermaen_)
 
 \ Thanks to **[ReactJS](https://facebook.github.io/react)**, **[Radium](https://github.com/FormidableLabs/radium)**, **[Babel](https://babeljs.io)**, and **[Webpack](https://webpack.github.io)**.
