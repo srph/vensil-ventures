@@ -1,0 +1,33 @@
+@mixin btn-variant($color) {
+  border-color: $color;
+  &:hover { border-color: darken($color, $brand__base-dark); }
+}
+
+.btn {
+  display: inline-block;
+  width: auto;
+  font-family: $font-family-base;
+  text-align: center;
+  cursor: pointer;
+  padding: $padding-base-vertical $padding-base-horizontal;
+
+  // Reset unusual Firefox-on-Android default style;
+  // see https//github.com/necolas/normalize.css/issues/214
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid $brand-gray;
+
+  transition: all $transition-base;
+
+  &.btn--block { display: block; width: 100%; }
+
+  &.btn--default { @include btn-variant($brand-default); }
+  &.btn--primary { @include btn-variant($brand-primary); }
+  &.btn--success { @include btn-variant($brand-success); }
+  &.btn--info { @include btn-variant($brand-info); }
+  &.btn--warning { @include btn-variant($brand-warning); }
+  &.btn--danger { @include btn-variant($brand-danger); }
+
+  &.btn--lg { padding: $padding-large-vertical $padding-large-horizontal; }
+  &.btn--sm { padding: $padding-small-vertical $padding-small-horizontal; }
+}

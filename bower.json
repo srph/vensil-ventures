@@ -1,0 +1,19 @@
+{
+  "name": "vensils-ventures",
+  "version": "0.0.0",
+  "homepage": "https://github.com/srph/vensils-ventures",
+  "authors": [
+    "srph <seraphipod@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.3.0"
+  }
+}

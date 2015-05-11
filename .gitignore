@@ -1,6 +1,12 @@
 # Exclude build files (for now)
 dist/*.js
 dist/*.*.js
+dist/*.css
+dist/*.*.css
+
+#
+Thumbs.db
+.DS_Store
 
 # Logs
 logs
