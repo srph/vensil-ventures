@@ -17,4 +17,4 @@ module.exports = {
     // e.g., require('./yolo.es6') => require('./yolo');
     extensions: ['', '.js', '.json', '.jsx', '.es6']
   }
-}
+};
