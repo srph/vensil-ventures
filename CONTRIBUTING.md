@@ -5,9 +5,8 @@
 We use [EditorConfig](editorconfig.org) for basics and encourage you to install its plugin on your text editor of choice. This will get you 25% of the way there.
 
 ### CSS
-
 - Keep variables at the **base** level and simple.
-- We will follow [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
+- We will primarily follow [mdo/code-guide](https://github.com/mdo/code-guide) and [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 
 ### JS
 
