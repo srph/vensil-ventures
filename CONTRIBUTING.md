@@ -23,7 +23,12 @@ In summary,
 - Do not use the optional parameters of setTimeout and setInterval
 
 ### Building
-You are required to install **npm** and **node.js** to deploy locally. Simply clone the repository, and install the dependencies, and you should be good to go!
+** Requirements**:
+- [npm](https://npmjs.com) & [nodejs `0.12`](https://nodejs.org)
+- [Bower](https://bower.io)
+- [Sass](sass-lang.com), [sass-globbing](https://github.com/chriseppstein/sass-globbing)
+
+Simply clone the repository, and install the dependencies, and you should be good to go!
 ```bash
 $ git clone https://github.com/srph/vensils-ventures && cd vensils-ventures
 $ npm install
