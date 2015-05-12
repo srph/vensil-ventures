@@ -1,1 +1,7 @@
-export default Services from './Services';
+import React from 'react';
+
+export default class Services extends React.Component {
+  render() {
+    return null;
+  }
+}

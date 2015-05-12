@@ -1,1 +1,7 @@
-export default Gallery from './Gallery';
+import React from 'react';
+
+export default class Gallery extends React.Component {
+  render() {
+    return null;
+  }
+}
