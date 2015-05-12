@@ -9,7 +9,7 @@ import Contact from './handlers/Contact';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="g-container">
         <Home />
         <About />
         <Gallery />

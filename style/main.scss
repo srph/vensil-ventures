@@ -3,7 +3,10 @@ $src = "../src";
 
 @import "normalize";
 @import "#{$bower}/font-awesome/scss/font-awesome";
+@import "utilities";
 @import "variables";
+@import "scaffold";
+@import "grid";
 @import "btn";
 // All stylesheets (per feat)
 @import "#{$src}/**/*";
