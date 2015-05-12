@@ -5,8 +5,7 @@ dist/*.css
 dist/*.css.map
 
 #
-Thumbs.db
-.DS_Store
+**/*/Thumbs.db
 **/*/.DS_Store
 
 # Logs
