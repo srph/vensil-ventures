@@ -6,9 +6,10 @@ export default {
    * @params {number} duration
    */
   scrollTop(duration) {
-    let step = -window.scrollY / (duration / MAGIC);
+    let scrollHeight = window.scrollY;
+    let step = -scrollHeight / (duration / MAGIC);
     let _interval = setInterval(() => {
-      if ( window.scrollY > 0 ) {
+      if ( scrollHeight > 0 ) {
         window.scrollBy(0, step);
       } else {
         clearInterval(_interval);
