@@ -1,0 +1,49 @@
+$navbar-height: 75px;
+$navbar-bg-color: $brand-default;
+$navbar-padding-vertical: $navbar-height;
+$navbar-padding-horizontal: ($grid-gutter-width / 2);
+$navbar-active-bg-color: $grey--light;
+
+.nav {
+  height: $navbar-height;
+  width: 100%;
+  background: $navbar-bg-color;
+  @include u-clearfix();
+
+  // [M] Sticky navbar
+  &.nav--sticky { position: fixed; }
+
+  /*
+   * .nav__navbar
+   */
+  // [B] ul.nav__navbar
+  > .nav__navbar {
+    float: left;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  // [M] ul.nav__navbar.nav__navbar--right
+  > .nav__navbar--right { float: right; }
+
+  /*
+   * nav__navbar li
+   */
+  > .nav__navbar > li {
+    position: relative; // For dropdowns and anything nice
+    display: block;
+    list-style: none;
+    float: left;
+  }
+
+  .nav__navbar > li > a {
+    color: $grey;
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+    transition: all $transition-base-short;
+  }
+
+  .nav__navbar > li > a:hover,
+  .nav__navbar > li > a.nav__navbar__link--active {
+    background-color: $navbar-active-bg-color;
+  }
+}
