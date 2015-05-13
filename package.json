@@ -8,7 +8,7 @@
     "build": "webpack -d --display-error-details",
     "watch": "webpack -w -d --display-error-details",
     "prod": "webpack -p -d --display-error-details",
-    "style": "sass -r sass-globbing --watch style/main.scss dist/style.css"
+    "style": "sass -r sass-globbing --watch style/main.scss:dist/style.css"
   },
   "repository": {
     "type": "git",
