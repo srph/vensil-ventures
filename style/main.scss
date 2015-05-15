@@ -1,5 +1,11 @@
+// CSS Resets
 @import "vendor/normalize";
+// Dependencies
+@import "bourbon";
+@import "neat";
 @import "../bower_components/font-awesome/scss/font-awesome";
+
+// Project styling
 @import "utilities";
 @import "variables";
 @import "scaffold";
