@@ -65,6 +65,7 @@
   width: 100%;
 }
 
+// Roundness
 @mixin btn--roundness($local-roundness: $border-radius-base) {
   // Identify the roundness
   $roundness: null;
