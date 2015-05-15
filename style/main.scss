@@ -1,13 +1,14 @@
 // CSS Resets
 @import "vendor/normalize";
 // Dependencies
-@import "bourbon";
-@import "neat";
+@import "bourbon/bourbon";
 @import "../bower_components/font-awesome/scss/font-awesome";
-
-// Project styling
+// Grid / Variables
+@import "neat/neat-helpers";
+@import "variables"; // Should be imported before neat
+@import "neat/neat";
+// Other
 @import "utilities";
-@import "variables";
 @import "scaffold";
 @import "grid";
 @import "btn";

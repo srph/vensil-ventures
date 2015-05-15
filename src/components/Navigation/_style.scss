@@ -1,8 +1,7 @@
 $navbar-height: 75px;
 $navbar-bg-color: $brand-default;
-$navbar-padding-vertical: $navbar-height;
-$navbar-padding-horizontal: ($grid-gutter-width / 2);
-$navbar-active-bg-color: $grey--light;
+$navbar-padding-vertical: ($navbar-height / 2);
+$navbar-padding-horizontal: $grid-gutter-width;
 
 .nav {
   height: $navbar-height;
@@ -37,13 +36,13 @@ $navbar-active-bg-color: $grey--light;
   }
 
   .nav__navbar > li > a {
-    color: $grey;
+    color: $gray;
     padding: $navbar-padding-vertical $navbar-padding-horizontal;
     transition: all $transition-base-short;
   }
 
   .nav__navbar > li > a:hover,
   .nav__navbar > li > a.nav__navbar__link--active {
-    background-color: $navbar-active-bg-color;
+    background-color: $gray--light;
   }
 }
