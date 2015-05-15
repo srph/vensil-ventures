@@ -3,10 +3,10 @@
   padding-right: $grid-gutter-width;
   @include outer-container(100%);
 
-  @include media($screen-xs-min) {
+  @include media($screen-sm-min) {
     width: $screen-sm-min;
     padding-left: 0;
     padding-right: 0;
   }
-  @include media($screen-sm-min) { width: $screen-sm-min; }
+  @include media($screen-md-min) { width: $screen-md-min; }
 }
