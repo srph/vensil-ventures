@@ -2,6 +2,9 @@ import React from 'react';
 import bean from 'bean';
 import classnames from 'classnames';
 
+// Allowance to `fix` the navbar
+const ALLOWANCE = 50;
+
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +20,11 @@ export default class Navigation extends React.Component {
   }
 
   render() {
-    let classname = classnames('nav', { 'nav--sticky': this.state.fixed });
+    let { fixed } = this.state;
+    let classname = classnames('nav', {
+      'nav--sticky': fixed,
+      'nav--static-bottom': !fixed
+    });
 
     return (
       <nav className={classname} role="navigation">
@@ -34,6 +41,6 @@ export default class Navigation extends React.Component {
 
   _handleScroll() {
     // Set navbar to fixed if it has exceeded .home
-    this.setState({ fixed: window.scrollY >= window.innerHeight });
+    this.setState({ fixed: window.scrollY + ALLOWANCE >= window.innerHeight });
   }
 }

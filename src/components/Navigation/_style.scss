@@ -6,8 +6,7 @@ $nav-items: 5;
 
 // Needs refactoring. Styling should be placed in a modifier class
 .nav {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   height: $nav-height;
   width: 100%;
   background: $nav-bg-color;
@@ -16,7 +15,16 @@ $nav-items: 5;
   @include u-clearfix();
 
   // [M] Sticky navbar
-  &.nav--sticky { position: fixed; }
+  &.nav--sticky {
+    position: fixed;
+    top: 0;
+  }
+
+  // [M] Static bottom
+  &.nav--static-bottom {
+    position: absolute;
+    bottom: 0;
+  }
 
   /*
    * .nav__navbar
