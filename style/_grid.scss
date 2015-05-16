@@ -3,7 +3,7 @@
   padding-right: $local-padding;
   @include outer-container(100%);
 
-  @include media($screen-sm-min) {
+  @include media($tablet) {
     width: $screen-sm-min;
     padding-left: 0;
     padding-right: 0;
