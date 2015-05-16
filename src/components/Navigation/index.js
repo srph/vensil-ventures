@@ -3,6 +3,7 @@ import bean from 'bean';
 import classnames from 'classnames';
 
 // Allowance to `fix` the navbar
+// 50 == navbar height. check the css file in the same directory.
 const ALLOWANCE = 50;
 
 export default class Navigation extends React.Component {
@@ -13,10 +14,13 @@ export default class Navigation extends React.Component {
 
   componentDidMount() {
     bean.on(window, 'scroll', this._handleScroll.bind(this));
+    // Recalculate when a resize occurs.
+    bean.on(window, 'resize', this._handleScroll.bind(this));
   }
 
   componentWillUnmount() {
-   bean.on(window, 'scroll', this._handleScroll.bind(this));
+    bean.off(window, 'scroll', this._handleScroll.bind(this));
+    bean.off(window, 'resize', this._handleScroll.bind(this));
   }
 
   render() {
