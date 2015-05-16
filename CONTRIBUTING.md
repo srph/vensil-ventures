@@ -23,7 +23,8 @@ In summary,
 - Do not use the optional parameters of setTimeout and setInterval
 
 ### Building
-** Requirements**:
+
+**Requirements**:
 - [npm](https://npmjs.com) & [nodejs `0.12`](https://nodejs.org)
 - [Bower](https://bower.io)
 - [Sass](sass-lang.com), [sass-globbing](https://github.com/chriseppstein/sass-globbing)
