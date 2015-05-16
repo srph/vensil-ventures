@@ -1,6 +1,6 @@
-.g-container {
-  padding-left: $grid-gutter-width;
-  padding-right: $grid-gutter-width;
+@mixin g-container($local-padding: $grid-gutter-width) {
+  padding-left: $local-padding;
+  padding-right: $local-padding;
   @include outer-container(100%);
 
   @include media($screen-sm-min) {

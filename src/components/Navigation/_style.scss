@@ -1,12 +1,18 @@
-$navbar-height: 75px;
-$navbar-bg-color: $brand-default;
-$navbar-padding-vertical: ($navbar-height / 2);
-$navbar-padding-horizontal: $grid-gutter-width;
+$nav-height: 50px;
+$nav-bg-color: $brand-default;
+$nav-padding-vertical: (($nav-height - $line-height-computed) / 2);
+$nav-padding-horizontal: $grid-gutter-width;
+$nav-items: 5;
 
+// Needs refactoring. Styling should be placed in a modifier class
 .nav {
-  height: $navbar-height;
+  position: absolute;
+  bottom: 0;
+  height: $nav-height;
   width: 100%;
-  background: $navbar-bg-color;
+  background: $nav-bg-color;
+  overflow: hidden;
+  text-align: center;
   @include u-clearfix();
 
   // [M] Sticky navbar
@@ -16,33 +22,35 @@ $navbar-padding-horizontal: $grid-gutter-width;
    * .nav__navbar
    */
   // [B] ul.nav__navbar
-  > .nav__navbar {
-    float: left;
-    margin: 0;
+  .nav__navbar {
+    display: inline-block;
+    margin: 0 auto;
     padding-left: 0;
+    width: 100%;
   }
-
-  // [M] ul.nav__navbar.nav__navbar--right
-  > .nav__navbar--right { float: right; }
 
   /*
    * nav__navbar li
    */
-  > .nav__navbar > li {
-    position: relative; // For dropdowns and anything nice
-    display: block;
-    list-style: none;
+  .nav__navbar > li {
     float: left;
+    list-style: none;
+    width: (100% / $nav-items);
   }
 
   .nav__navbar > li > a {
+    display: block;
+    padding: $nav-padding-vertical 0;
+    line-height: $line-height-computed;
     color: $gray;
-    padding: $navbar-padding-vertical $navbar-padding-horizontal;
     transition: all $transition-base-short;
   }
 
+  .nav__navbar > li > a:hover { text-decoration: none; }
+
   .nav__navbar > li > a:hover,
   .nav__navbar > li > a.nav__navbar__link--active {
+    color: #fff;
     background-color: $gray--light;
   }
 }

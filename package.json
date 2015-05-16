@@ -23,6 +23,8 @@
   "dependencies": {
     "babel-core": "^5.2.17",
     "babel-loader": "^5.0.0",
+    "bean": "^1.0.15",
+    "classnames": "^2.1.1",
     "react": "^0.13.3"
   },
   "devDependencies": {
