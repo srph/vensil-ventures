@@ -12,8 +12,12 @@ $service-item-color: #fff;
   .services__item-container {
     margin-bottom: $handle-padding;
     @include span-columns(12);
-    @include media($tablet) { @include span-columns(4); }
     &:last-child { margin-bottom: 0; }
+
+    @include media($tablet) {
+      @include span-columns(4);
+      &:nth-child(3n) { margin-right: 0; }
+    }
   }
 
   .services__item {

@@ -105,6 +105,8 @@ $grid-gutter-width: 30px;
 /*
  * VIII. ETC
  */
+$z-index-navigation: 1000;
+
 $transition-base: 0.2s;
 $transition-base-short: $transition-base / 1.5;
 $transition-base-long: $transition-base * 2;

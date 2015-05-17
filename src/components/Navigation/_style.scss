@@ -6,6 +6,7 @@ $nav-items: 5;
 
 // Needs refactoring. Styling should be placed in a modifier class
 .nav {
+  z-index: $z-index-navigation;
   position: relative;
   height: $nav-height;
   width: 100%;
