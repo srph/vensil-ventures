@@ -39,12 +39,12 @@ $service-item-color: #fff;
       width: 100%;
       background-color: #000;
 
-      opacity: 0;
+      opacity: 0.2;
       transition: opacity $transition-base;
     }
 
     &:hover { background-size: 120% 120%; }
-    &:hover::before { opacity: 0.5; }
+    &:hover::before { opacity: 0.8; }
   }
 
   // Since we are using padding-top to set the height of the containing element
