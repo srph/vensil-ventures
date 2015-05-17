@@ -29,6 +29,10 @@ $service-item-color: #fff;
     color: $service-item-color;
     transition: all $transition-base;
 
+    // Enlarge image (transition)
+    &:hover { background-size: 120% 120%; }
+
+    // Add a lightly visible dark bg.
     &::before {
       content: "";
       display: block;
@@ -42,8 +46,6 @@ $service-item-color: #fff;
       opacity: 0.2;
       transition: opacity $transition-base;
     }
-
-    &:hover { background-size: 120% 120%; }
     &:hover::before { opacity: 0.8; }
   }
 
