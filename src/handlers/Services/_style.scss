@@ -10,8 +10,10 @@ $service-item-color: #fff;
   .services__list { @include row(); }
 
   .services__item-container {
+    margin-bottom: $handle-padding;
     @include span-columns(12);
     @include media($tablet) { @include span-columns(4); }
+    &:last-child { margin-bottom: 0; }
   }
 
   .services__item {
@@ -20,14 +22,17 @@ $service-item-color: #fff;
     // https://github.com/srph/til/blob/master/2015-03-13-padding-in-percent-is-based-on-its-parent-elements-width.md
     padding-top: 100%;
     width: 100%;
-    background: #000;
-    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center center;
     color: $service-item-color;
     transition: all $transition-base;
 
-    &:hover { background-size: 150% 150%; }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      background-size: 120% 120%;
+    }
   }
 
   // Since we are using padding-top to set the height of the containing element

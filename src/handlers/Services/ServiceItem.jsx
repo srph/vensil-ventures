@@ -10,7 +10,7 @@ export default class ServiceItem extends React.Component {
 
     return (
       <article className="services__item-container">
-        <div className="services__item" style={{ backgroundImage: thumbnail }}>
+        <div className="services__item" style={{ backgroundImage: `url(${thumbnail})` }}>
           <div className="services__item__placer">
             <div className="services__item__outer">
               <div className="services__item__inner">
