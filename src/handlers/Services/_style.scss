@@ -1,0 +1,35 @@
+$service-item-color: #fff;
+
+.services {
+  padding-top: $handle-padding;
+  padding-bottom: $handle-padding;
+  background: #ddd;
+
+  .services__container { @include g-container(); }
+  .services__heading { }
+  .services__list { @include row(); }
+  .services__item {
+    height: 300px;
+    background: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: $service-item-color;
+    @include span-columns(12);
+    @include media($tablet) { @include span-columns(4); }
+  }
+  .services__item__outer {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+  .services__item__inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .services__item__heading { }
+  .services__item__description { }
+}
