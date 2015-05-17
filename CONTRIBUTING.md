@@ -23,15 +23,19 @@ In summary,
 - Do not use the optional parameters of setTimeout and setInterval
 
 ### Building
-** Requirements**:
+
+**Requirements**:
 - [npm](https://npmjs.com) & [nodejs `0.12`](https://nodejs.org)
-- [Bower](https://bower.io)
-- [Sass](sass-lang.com), [sass-globbing](https://github.com/chriseppstein/sass-globbing)
+- [Bower](https://bower.io)\
+- [Ruby](https://www.ruby-lang.org) & [RubyGems](https://rubygems.org/)
+- [Bundler](http://bundler.io/)
 
 Simply clone the repository, and install the dependencies, and you should be good to go!
 ```bash
 $ git clone https://github.com/srph/vensils-ventures && cd vensils-ventures
 $ npm install
+$ bower install
+$ bundle install
 ```
 
 ### Automation
