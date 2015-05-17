@@ -6,14 +6,18 @@ export default class ServiceItem extends React.Component {
   }
 
   render() {
-    let { title, children } = this.props;
+    let { title, children, thumbnail } = this.props;
 
     return (
-      <article className="services__item">
-        <div className="services__item__outer">
-          <div className="services__item__inner">
-            <div className="services__item__heading">{title}</div>
-            <div className="services__item__description">{children}</div>
+      <article className="services__item-container">
+        <div className="services__item" style={{ backgroundImage: thumbnail }}>
+          <div className="services__item__placer">
+            <div className="services__item__outer">
+              <div className="services__item__inner">
+                <div className="services__item__heading">{title}</div>
+                <div className="services__item__description">{children}</div>
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -24,5 +28,6 @@ export default class ServiceItem extends React.Component {
 // I really don't like how I can't use ES7 Property Initializers yet, but oh well...
 ServiceItem.propTypes = {
   title: React.PropTypes.string.isRequired,
+  thumbnail: React.PropTypes.string.isRequired,
   children: React.PropTypes.string.isRequired
 };

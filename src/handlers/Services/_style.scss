@@ -8,28 +8,51 @@ $service-item-color: #fff;
   .services__container { @include g-container(); }
   .services__heading { }
   .services__list { @include row(); }
+
+  .services__item-container {
+    @include span-columns(12);
+    @include media($tablet) { @include span-columns(4); }
+  }
+
   .services__item {
-    height: 300px;
+    position: relative;
+    // Proportional height-width
+    // https://github.com/srph/til/blob/master/2015-03-13-padding-in-percent-is-based-on-its-parent-elements-width.md
+    padding-top: 100%;
+    width: 100%;
     background: #000;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     color: $service-item-color;
-    @include span-columns(12);
-    @include media($tablet) { @include span-columns(4); }
+    transition: all $transition-base;
+
+    &:hover { background-size: 150% 150%; }
   }
-  .services__item__outer {
-    display: table;
+
+  // Since we are using padding-top to set the height of the containing element
+  // We'll use this to position this absolutely, relative to the container.
+  // This makes everything normal again.
+  .services__item .services__item__placer {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
   }
 
-  .services__item__inner {
+  // Vertically center
+  .services__item .services__item__outer {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  .services__item .services__item__inner {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
   }
 
-  .services__item__heading { }
-  .services__item__description { }
+  .services__item .services__item__heading { }
+  .services__item .services__item__description { }
 }
