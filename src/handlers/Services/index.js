@@ -7,8 +7,8 @@ export default class Services extends React.Component {
       <div className="services">
         <div className="services__container">
           <div className="services__heading">
-            Services
-            <small>Check out what awesomeness we can contribute to your parties!</small>
+            <div className="services__heading__title">Services</div>
+            <div className="services__heading__description">Check out what awesomeness we can contribute to your parties!</div>
           </div>
 
           <ServiceList />

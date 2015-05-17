@@ -6,7 +6,33 @@ $service-item-color: #fff;
   background: #ddd;
 
   .services__container { @include g-container(); }
-  .services__heading { }
+
+  .services__heading {
+    position: relative;
+    margin-bottom: ($handle-padding / 2);
+    padding-bottom: ($handle-padding / 2);
+    text-align: center;
+
+    > .services__heading__title { @extend .h1; }
+    > .services__heading__description { @extend .h4; }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      // <!-- Center
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      // Center -->
+      height: 3px;
+      width: 25px;
+      background: red;
+    }
+  }
+
+  // Contain each `services__item`
   .services__list { @include row(); }
 
   .services__item-container {
@@ -76,6 +102,6 @@ $service-item-color: #fff;
     text-align: center;
   }
 
-  .services__item .services__item__heading { }
+  .services__item .services__item__heading { @extend .h1; }
   .services__item .services__item__description { }
 }
