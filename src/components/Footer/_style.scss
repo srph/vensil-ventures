@@ -1,0 +1,65 @@
+$footer-height: 100px;
+$footer-social-media-icon-size: 50px;
+$fb-bg-color: #3b5998;
+$tw-bg-color: #afeff1;
+
+.footer {
+  padding-top: $handle-padding;
+  padding-bottom: $handle-padding;
+  height: auto;
+  background: $text-color;
+  color: #fff;
+
+  .footer__container { @include g-container; }
+
+  .footer__row { @include row; }
+
+  .footer__copyright {
+    @include span-columns(12);
+    @include media($tablet) { @include span-columns(4); }
+  }
+
+  .footer__social-media {
+    @include shift(0);
+    @include span-columns(12);
+    @include clearfix;
+
+    @include media($tablet) {
+      @include shift(4);
+      @include span-columns(4);
+    }
+
+    // Lighten all icons
+    &:hover > .footer__social-media__icon { opacity: 0.5; }
+
+    > .footer__social-media__icon {
+      display: block;
+      float: left;
+      // <!-- Center the icon
+      padding-top: (($footer-social-media-icon-size - $line-height-computed) / 2);
+      padding-bottom: (($footer-social-media-icon-size - $line-height-computed) / 2);
+      text-align: center;
+      // -->
+      height: $footer-social-media-icon-size;
+      width: $footer-social-media-icon-size;
+      color: #fff;
+      background: $gray;
+      border-radius: $border-radius-circle;
+      transition: all $transition-base;
+
+      margin-right: 10px;
+      &:last-child { margin-right: 0; }
+
+      // Darken the hovered icon while the other
+      // icons are lighted by the selector above
+      &:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+
+      // Background modifiers
+      &.footer__social-media__icon--fb { background: $fb-bg-color; }
+      &.footer__social-media__icon--tw { background: $tw-bg-color; }
+    }
+  }
+}

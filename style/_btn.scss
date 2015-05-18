@@ -77,3 +77,16 @@
 
   border-radius: $roundness;
 }
+
+@mixin btn__caret($animate: false) {
+  margin-left: 10px;
+
+  @if $animate != false {
+    &:hover {
+    @include animation-name(slide);
+    @include animation-duration(1s);
+    @include animation-timing-function(ease);
+    @include animation-iteration-count(infinite);
+    }
+  }
+}

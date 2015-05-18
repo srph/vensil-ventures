@@ -6,6 +6,8 @@ import Gallery from './handlers/Gallery';
 import Services from './handlers/Services';
 import Contact from './handlers/Contact';
 
+import Footer from './components/Footer';
+
 class App extends React.Component {
   render() {
     return (
@@ -15,6 +17,7 @@ class App extends React.Component {
         <Gallery />
         <Services />
         <Contact />
+        <Footer />
       </div>
     );
   }
