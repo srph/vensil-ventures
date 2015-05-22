@@ -17,7 +17,8 @@
  */
 $brands: default, primary, success, info, warning, danger;
 $brand-default: #fff;
-$brand-primary: darken(#428bca, 6.5%);
+$brand-primary: #7342ae;
+$brand-primary--sub: #d22cd9; // For gradient
 $brand-success: #5cb85c;
 $brand-info: #5bc0de;
 $brand-warning: #f0ad4e;
@@ -43,7 +44,7 @@ $link-decoration: underline;
 /*
  * III. Typography
  */
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-base: $font-family-sans-serif;
 
@@ -62,7 +63,7 @@ $font-size-h6: $font-size-small;
 $line-height-base: 1.428571429; // <: 20/14
 $line-height-computed: floor($font-size-base * $line-height-base); // ~20
 
-$headings-font-family: $font-family-sans-serif;
+$headings-font-family: "Bitter", $font-family-serif;
 $headings-line-height: 1.1;
 
 /*

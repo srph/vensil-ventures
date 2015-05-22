@@ -1,8 +1,11 @@
-@mixin btn() {
+/*
+ * .btn component
+ */
+@mixin btn($local-inverse: false, $local-child: ".__caret", $local-animate: false) {
   display: inline-block;
   width: auto;
-  color: white;
   font-family: $font-family-base;
+  color: $gray;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -11,21 +14,45 @@
   // Reset unusual Firefox-on-Android default style;
   // see https//github.com/necolas/normalize.css/issues/214
   background-image: none;
-  background-color: transparent;
-  border: 1px solid $gray;
   border-radius: $border-radius-base;
-
   transition: all $transition-base;
 
   &:hover {
     text-decoration: none;
     color: $gray--dark;
-    border: 1px solid $gray--dark;
+  }
+
+  @if $local-inverse == false {
+    background-color: transparent;
+    border: 1px solid $gray;
+
+    &:hover { border-color: $gray--dark; }
+  } @else {
+    background-color: $gray;
+    border: 0;
+  }
+
+  /*
+   *  Implement caret / icon (whatever)
+   */
+  #{$local-child} { margin-left: 10px; }
+
+  &:hover {
+    @if $local-animate != false {
+      #{$local-child} {
+        @include animation-name(slide);
+        @include animation-duration(0.5s);
+        @include animation-timing-function(ease);
+        @include animation-iteration-count(infinite);
+      }
+    }
   }
 }
 
-// Create color-variant mixins
-@mixin btn--variant($local-brand: gray) {
+/*
+ * Create color-variant btn
+ */
+@mixin btn--variant($local-brand: gray, $local-inverse: false, $local-gradient: false) {
   // Assign variant accordingly.
   $local-brand-name: gray;
   @if $local-brand == default {
@@ -42,11 +69,23 @@
     $local-brand-name: $brand-danger;
   }
 
-  color: $local-brand-name;
-  border-color: $local-brand-name;
-  &:hover {
-    color: darken($local-brand-name, $brand__base-dark);
-    border-color: darken($local-brand-name, $brand__base-dark);
+  @if $local-inverse == false {
+    color: $local-brand-name;
+    border-color: $local-brand-name;
+    &:hover {
+      color: darken($local-brand-name, $brand__base-dark);
+      border-color: darken($local-brand-name, $brand__base-dark);
+    }
+  } @else {
+    &, &:hover { color: #fff;}
+
+    @if $local-brand == primary and $local-gradient == true {
+      background: linear-gradient(90deg, $brand-primary, $brand-primary--sub);
+      &:hover { background: linear-gradient(90deg, darken($brand-primary, $brand__base-dark), darken($brand-primary--sub, $brand__base-dark)); }
+    } @else {
+      background-color: $local-brand-name;
+      &:hover { background-color: darken($local-brand-name, $brand__base-dark); }
+    }
   }
 }
 
@@ -76,17 +115,4 @@
   }
 
   border-radius: $roundness;
-}
-
-@mixin btn__caret($animate: false) {
-  margin-left: 10px;
-
-  @if $animate != false {
-    &:hover {
-    @include animation-name(slide);
-    @include animation-duration(1s);
-    @include animation-timing-function(ease);
-    @include animation-iteration-count(infinite);
-    }
-  }
 }

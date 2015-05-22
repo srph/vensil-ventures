@@ -28,8 +28,17 @@
   }
 
   .home__service-btn {
-    @include btn();
-    @include btn--variant(primary);
+    @include btn(true, ".home__service-btn__caret");
+    @include btn--variant(primary, true, true);
     @include btn--size(lg);
+    @include btn--roundness(round)
+  }
+
+  .home__contact-btn {
+    @include btn();
+    @include btn--variant(default);
+    @include btn--size(lg);
+    @include btn--roundness(round);
+    margin-right: 10px;
   }
 }

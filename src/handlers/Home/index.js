@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../../components/Navigation';
-import SeeServicesButton from './SeeServicesButton';
+import ServicesButton from './ServicesButton';
+import ContactButton from './ContactButton';
 
 export default class Home extends React.Component {
   render() {
@@ -11,7 +12,8 @@ export default class Home extends React.Component {
             <div className="home__container">
               <img src="" className="home__logo" />
               <h5> Vensils Ventures is a photobooth services on Metro Manila </h5>
-              <SeeServicesButton />
+              <ContactButton />
+              <ServicesButton />
             </div>
           </div>
         </div>
