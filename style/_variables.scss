@@ -15,14 +15,7 @@
 /*
  * I. Colors
  */
-$brands: default, primary, success, info, warning, danger;
-$brand-default: #fff;
-$brand-primary: #7342ae;
-$brand-primary--sub: #d22cd9; // For gradient
-$brand-success: #5cb85c;
-$brand-info: #5bc0de;
-$brand-warning: #f0ad4e;
-$brand-danger: #d9534f;
+// Lights / Darks
 $brand__base-light: 10%;
 $brand__base-dark: 10%;
 $gray-base: #000;
@@ -31,6 +24,17 @@ $gray--dark: lighten($gray-base, 20%);
 $gray--darker: lighten($gray-base, 13.5%);
 $gray--light: lighten($gray-base, 46.7%);
 $gray--lighter: lighten($gray-base, 93.5%);
+
+$brands: default, primary, success, info, warning, danger;
+$brand-default: #fff;
+$brand-primary: #7342ae;
+$brand-primary--sub: #d22cd9; // For gradient
+$brand-primary__gradient: linear-gradient(90deg, $brand-primary, $brand-primary--sub);
+$brand-primary__gradient--dark: linear-gradient(90deg, darken($brand-primary, $brand__base-dark), darken($brand-primary--sub, $brand__base-dark));
+$brand-success: #5cb85c;
+$brand-info: #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
 
 /*
  * II. Scaffold

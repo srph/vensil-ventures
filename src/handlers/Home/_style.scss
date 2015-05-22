@@ -21,9 +21,8 @@
 
   .home__container { @include g-container(); }
 
-  .home__logo {
-    margin-left: auto;
-    margin-right: auto;
+  .home__heading {
+    @extend .h1;
     margin-bottom: 25px;
   }
 

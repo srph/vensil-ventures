@@ -80,8 +80,8 @@
     &, &:hover { color: #fff;}
 
     @if $local-brand == primary and $local-gradient == true {
-      background: linear-gradient(90deg, $brand-primary, $brand-primary--sub);
-      &:hover { background: linear-gradient(90deg, darken($brand-primary, $brand__base-dark), darken($brand-primary--sub, $brand__base-dark)); }
+      background: $brand-primary__gradient;
+      &:hover { background: $brand-primary__gradient--dark; }
     } @else {
       background-color: $local-brand-name;
       &:hover { background-color: darken($local-brand-name, $brand__base-dark); }
