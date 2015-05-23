@@ -32,7 +32,7 @@ $brand-primary--sub: #d22cd9; // For gradient
 $brand-primary__gradient: linear-gradient(90deg, $brand-primary, $brand-primary--sub);
 $brand-primary__gradient--dark: linear-gradient(90deg, darken($brand-primary, $brand__base-dark), darken($brand-primary--sub, $brand__base-dark));
 $brand-success: #5cb85c;
-$brand-info: #5bc0de;
+$brand-info: #268bd2;
 $brand-warning: #f0ad4e;
 $brand-danger: #d9534f;
 
@@ -41,7 +41,7 @@ $brand-danger: #d9534f;
  */
 $body-bg: #fff;
 $text-color: #000;
-$link-color: $brand-primary;
+$link-color: $brand-info;
 $link-hover-color: darken($link-color, 15%);
 $link-decoration: underline;
 

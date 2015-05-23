@@ -13,7 +13,7 @@ $nav-items: 5;
   background: $nav-bg-color;
   overflow: hidden;
   text-align: center;
-  @include u-clearfix();
+  @include clearfix();
 
   // [M] Sticky navbar
   &.nav--sticky {
