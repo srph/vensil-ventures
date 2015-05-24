@@ -27,7 +27,7 @@
   }
 
   .home__service-btn {
-    @include btn(true, ".home__service-btn__caret");
+    @include btn(true, ".home__service-btn__caret", true);
     @include btn--variant(primary, true, true);
     @include btn--size(lg);
     @include btn--roundness(round)

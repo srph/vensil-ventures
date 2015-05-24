@@ -40,9 +40,15 @@
   &:hover {
     @if $local-animate != false {
       #{$local-child} {
-        @include animation-name(slide);
-        @include animation-duration(0.5s);
-        @include animation-timing-function(ease);
+        @keyframes btn__caret {
+          0% { transform: translateX(0px); }
+          40% { transform: translateX(5px); }
+          100% { transform: translateX(0px); }
+        }
+
+        @include animation-name(btn__caret);
+        @include animation-duration(0.75s);
+        @include animation-timing-function(cubic-bezier(0.22, 0.61, 0.36, 1));
         @include animation-iteration-count(infinite);
       }
     }
