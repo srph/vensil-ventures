@@ -32,13 +32,15 @@ export default class Navigation extends React.Component {
 
     return (
       <nav className={classname} role="navigation">
-        <ul className="nav__navbar">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        <div className="nav__container">
+          <ul className="nav__navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
       </nav>
     );
   }

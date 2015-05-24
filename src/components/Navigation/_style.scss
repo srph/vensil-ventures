@@ -1,8 +1,7 @@
 $nav-height: 50px;
 $nav-bg-color: $brand-default;
 $nav-padding-vertical: (($nav-height - $line-height-computed) / 2);
-$nav-padding-horizontal: $grid-gutter-width;
-$nav-items: 5;
+$nav-padding-horizontal: ($grid-gutter-width / 2);
 
 // Needs refactoring. Styling should be placed in a modifier class
 .nav {
@@ -27,6 +26,10 @@ $nav-items: 5;
     bottom: 0;
   }
 
+  .nav__container {
+    @include g-container();
+  }
+
   /*
    * .nav__navbar
    */
@@ -44,12 +47,11 @@ $nav-items: 5;
   .nav__navbar > li {
     float: left;
     list-style: none;
-    width: (100% / $nav-items);
   }
 
   .nav__navbar > li > a {
     display: block;
-    padding: $nav-padding-vertical 0;
+    padding: $nav-padding-vertical $nav-padding-horizontal;
     line-height: $line-height-computed;
     color: $gray;
     transition: all $transition-base-short;
