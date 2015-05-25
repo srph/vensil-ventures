@@ -52,7 +52,7 @@ export default class Navigation extends React.Component {
           </ul>
 
           <ul className="nav__navbar nav__navbar--mobile nav__navbar--right">
-            <li className="c-dropdown">
+            <li className="c-dropdown nav__navbar__item--no-border">
               <a href="#">More</a>
               <ul className={menu}>
                 <li><a href="#">More</a></li>

@@ -98,7 +98,7 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
   }
 
   // Show the top border when hovered
-  .nav__navbar > li:hover::before { opacity: 1; }
+  .nav__navbar > li:not(.nav__navbar__item--no-border):hover::before { opacity: 1; }
 
   .nav__navbar > li > a {
     display: block;
