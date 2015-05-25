@@ -15,3 +15,15 @@
     text-align: center;
   }
 }
+
+/**
+ * Removes ul/li default style.
+ * Useful for elements that use list.
+ */
+@mixin remove-list-defaults() {
+  margin: 0 auto;
+  padding-left: 0;
+  width: auto;
+
+  > li { list-style: none; }
+}

@@ -27,7 +27,9 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
   }
 
   .nav__container {
-    @include g-container();
+    @include media($tablet) {
+      @include g-container();
+    }
   }
 
   /**
@@ -55,6 +57,15 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
     padding-left: 0; // Remove UL default
     width: auto;
   }
+
+  // Hides a group of links for mobile screens; displays on tablet >
+  .nav__navbar.nav__navbar--screen {
+    display: none;
+    @include media($tablet) { display: block; }
+  }
+
+  // Floats to the right
+  .nav__navbar.nav__navbar--right { float: right; }
 
   /*
    * nav__navbar li
