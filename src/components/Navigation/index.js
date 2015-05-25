@@ -25,10 +25,17 @@ export default class Navigation extends React.Component {
 
   render() {
     let { fixed } = this.state;
+
     let classname = classnames('nav', {
       'nav--sticky': fixed,
       'nav--static-bottom': !fixed
     });
+
+    let menu = classnames(
+      'c-dropdown__menu',
+      'c-dropdown__menu--right',
+      { 'c-dropdown__menu--dropup': !fixed }
+    );
 
     return (
       <nav className={classname} role="navigation">
@@ -47,7 +54,7 @@ export default class Navigation extends React.Component {
           <ul className="nav__navbar nav__navbar--mobile nav__navbar--right">
             <li className="c-dropdown">
               <a href="#">More</a>
-              <ul className="c-dropdown__menu">
+              <ul className={menu}>
                 <li><a href="#">More</a></li>
               </ul>
             </li>
