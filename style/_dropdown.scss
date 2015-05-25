@@ -9,6 +9,14 @@
     display: block;
     visibility: hidden;
 
+    &.c-dropdown__menu--open {
+      visibility: visible;
+      // todo animation
+      animation: c-dropdown__menu-bounce;
+      animation-duration: 0.3s;
+      animation-iteration-count: 1;
+    }
+
     // Positions the dropdown to the right
     &.c-dropdown__menu--right {
       left: initial;
