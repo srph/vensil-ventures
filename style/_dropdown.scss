@@ -1,0 +1,20 @@
+.c-dropdown {
+  position: relative;
+
+  .c-dropdown__menu {
+    @include remove-list-defaults();
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    visibility: hidden;
+
+    // Positions the dropdown to the right
+    &.c-dropdown__menu--right {
+      left: initial;
+      right: 0;
+    }
+
+    &.c-dropdown__menu--dropup { top: 0; }
+  }
+}
