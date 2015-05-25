@@ -43,6 +43,7 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
     line-height: $line-height-computed;
     color: $text-color;
     font-family: $headings-font-family;
+    font-size: $font-size-base;
   }
   .nav__heading > a:hover { text-decoration: none; }
 
