@@ -64,6 +64,11 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
     @include media($tablet) { display: block; }
   }
 
+  // Displays a link only for small screens
+  .nav__navbar.nav__navbar--mobile {
+    @include media($tablet) { display: none; }
+  }
+
   // Floats to the right
   .nav__navbar.nav__navbar--right { float: right; }
 

@@ -36,12 +36,21 @@ export default class Navigation extends React.Component {
           <div className="nav__heading">
             <a href="#">Vensil's Ventures</a>
           </div>
-          <ul className="nav__navbar">
+          <ul className="nav__navbar nav__navbar--screen">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Gallery</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
+          </ul>
+
+          <ul className="nav__navbar nav__navbar--mobile nav__navbar--right">
+            <li className="c-dropdown">
+              <a href="#">More</a>
+              <ul className="c-dropdown__menu">
+                <li><a href="#">More</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </nav>
