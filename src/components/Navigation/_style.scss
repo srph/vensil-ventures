@@ -30,6 +30,20 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
     @include g-container();
   }
 
+  /**
+   * Header
+   */
+  .nav__heading { float: left; }
+
+  .nav__heading > a {
+    display: block;
+    padding: $nav-padding-vertical $nav-padding-horizontal;
+    line-height: $line-height-computed;
+    color: $text-color;
+    font-family: $headings-font-family;
+  }
+  .nav__heading > a:hover { text-decoration: none; }
+
   /*
    * .nav__navbar
    */
@@ -39,7 +53,7 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
     float: left;
     margin: 0 auto; // Remove UL default
     padding-left: 0; // Remove UL default
-    width: 100%;
+    width: auto;
   }
 
   /*
@@ -54,7 +68,7 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
     display: block;
     padding: $nav-padding-vertical $nav-padding-horizontal;
     line-height: $line-height-computed;
-    color: $gray;
+    color: $text-color;
     font-size: $font-size-small;
     text-transform: uppercase;
     letter-spacing: 1px;
