@@ -77,9 +77,28 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
    * nav__navbar li
    */
   .nav__navbar > li {
+    position: relative;
     float: left;
     list-style: none;
   }
+
+  // We'll use a ::before instead of border-top
+  // because it affects the position of the link.
+  .nav__navbar > li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: $brand-primary__gradient;
+    transition: opacity $transition-base-short;
+  }
+
+  // Show the top border when hovered
+  .nav__navbar > li:hover::before { opacity: 1; }
 
   .nav__navbar > li > a {
     display: block;
@@ -93,10 +112,4 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
   }
 
   .nav__navbar > li > a:hover { text-decoration: none; }
-
-  .nav__navbar > li > a:hover,
-  .nav__navbar > li > a.nav__navbar__link--active {
-    color: #fff;
-    background-color: $gray--light;
-  }
 }
