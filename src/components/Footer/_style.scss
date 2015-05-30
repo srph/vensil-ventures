@@ -12,7 +12,8 @@ $tw-bg-color: #afeff1;
 
   .footer__container { @include g-container; }
 
-  .footer__row { @include row; }
+  // Hold both colums (__copyright and __social-media)
+  .footer__inner-container { @include row; }
 
   .footer__copyright {
     @include span-columns(12);
@@ -28,7 +29,11 @@ $tw-bg-color: #afeff1;
       @include shift(4);
       @include span-columns(4);
     }
+  }
 
+  .footer__social-media__container {
+    @include clearfix;
+    float: left;
     // Lighten all icons
     &:hover > .footer__social-media__icon { opacity: 0.5; }
 
