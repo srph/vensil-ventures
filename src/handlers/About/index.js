@@ -1,4 +1,6 @@
 import React from 'react';
+import AboutCard from './AboutCard';
+import events from './data';
 
 export default class About extends React.Component {
   render() {
@@ -6,12 +8,7 @@ export default class About extends React.Component {
       <div className="about">
         <div className="about__container">
           <div className="about__container__inner">
-            <div className="about__card">
-              <header className="about__card__info">
-                <div className="about__card__info__heading">Kier's 18th Birthday</div>
-                <div className="about__card__info__date">May 18, 2015</div>
-              </header>
-            </div>
+            {events.map((event, i) => <AboutCard data={event} key={i} />)}
           </div>
         </div>
       </div>
