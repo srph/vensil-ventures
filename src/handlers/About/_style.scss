@@ -5,6 +5,8 @@ $about-card-padding: 20px;
 .about {
   min-height: 100vh;
   width: 100%;
+  padding-top: $handle-padding;
+  padding-bottom: $handle-padding;
 
   // Makes it scrollable
   .about__container {
@@ -52,11 +54,10 @@ $about-card-padding: 20px;
     height: $about-card-size;
     background: #ddd; // Random value atm
 
-    @include media($tablet) {
-      float: none;
-    }
+    @include media($tablet) { float: none; }
   }
 
+  // Shown only for small screens
   .about__card .about__card__info {
     position: absolute;
     left: $about-card-padding;
@@ -64,6 +65,8 @@ $about-card-padding: 20px;
     padding: $about-card-padding;
     width: ($about-card-size - ($about-card-padding * 2));
     background: rgba(0,0,0,0.5);
+
+    @include media($tablet) { display: none; }
   }
 
   .about__card__info > .about__card__info__heading {

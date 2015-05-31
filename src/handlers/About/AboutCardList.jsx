@@ -14,7 +14,7 @@ export default class AboutCardList extends React.Component {
      * Append `--half` modifier class to the element
      * (about__card-container--half)
      */
-    half: React.PropTypes.boolean
+    half: React.PropTypes.bool
   };
 
   constructor(props) {
