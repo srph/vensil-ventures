@@ -11,12 +11,12 @@ export default class AboutCard extends React.Component {
     let { title, date, thumbnail } = this.props.data;
 
     return (
-      <div className="about__card">
+      <li className="about__card">
         <header className="about__card__info">
           <div className="about__card__info__heading">{title}</div>
           <div className="about__card__info__date">{date}</div>
         </header>
-      </div>
+      </li>
     );
   }
 }

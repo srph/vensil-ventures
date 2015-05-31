@@ -8,10 +8,19 @@ $about-card-padding: 20px;
 
   // Makes it scrollable
   .about__container {
+    @include g-container;
+    padding: 0;
     width: 100%;
     height: $about-card-size;
     overflow-x: scroll;
     overflow-y: hidden;
+
+    @include media($tablet) {
+      overflow-x: auto;
+      overflow-y: auto;
+      height: auto;
+      width: 768px
+    }
   }
 
   // Contains the float, and lines each horizontally
@@ -19,6 +28,21 @@ $about-card-padding: 20px;
     @include clearfix;
     width: $about-card-count * $about-card-size;
     height: $about-card-size;
+
+    @include media($tablet) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .about__card-container {
+    @include remove-list-defaults;
+    float: left;
+
+    @include media($tablet) {
+      &.about__card-container--half { margin-top: ($about-card-size / 2); }
+      &.about__card-container--full { margin-top: $about-card-size; }
+    }
   }
 
   .about__card {
@@ -27,6 +51,10 @@ $about-card-padding: 20px;
     width: $about-card-size;
     height: $about-card-size;
     background: #ddd; // Random value atm
+
+    @include media($tablet) {
+      float: none;
+    }
   }
 
   .about__card .about__card__info {
