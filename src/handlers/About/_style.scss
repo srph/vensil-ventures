@@ -27,6 +27,7 @@ $about-card-column-count: 3;
       // the children elements (which are `ul` elements)
       // inside this container element (this class), so we will have to manually
       // compute to center the content.
+      //
       // Since 420px is the minimum screen size we handle, and
       // the size of each card is 300-square, we can manually compute the padding
       // to center each column (each `ul` element) inside the container restrictions.
