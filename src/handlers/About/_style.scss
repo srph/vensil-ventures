@@ -1,11 +1,55 @@
+$about-card-size: 300px;
+$about-card-count: 10;
+$about-card-padding: 20px;
+
 .about {
   min-height: 100vh;
   width: 100%;
 
+  // Makes it scrollable
   .about__container {
     width: 100%;
-    padding-bottom: 100%;
+    height: $about-card-size;
     overflow-x: scroll;
     overflow-y: hidden;
+  }
+
+  // Contains the float, and lines each horizontally
+  .about__container > .about__container__inner {
+    @include clearfix;
+    width: $about-card-count * $about-card-size;
+    height: $about-card-size;
+  }
+
+  .about__card {
+    position: relative;
+    float: left;
+    width: $about-card-size;
+    height: $about-card-size;
+    background: #ddd; // Random value atm
+  }
+
+  .about__card .about__card__info {
+    position: absolute;
+    left: $about-card-padding;
+    bottom: $about-card-padding;
+    padding: $about-card-padding;
+    width: ($about-card-size - ($about-card-padding * 2));
+    background: rgba(0,0,0,0.5);
+  }
+
+  .about__card__info > .about__card__info__heading {
+    @extend h4;
+    margin-top: 0;
+    color: #fff;
+  }
+
+  .about__card__info > .about__card__info__date {
+    @extend h6;
+    margin-bottom: 0;
+    font-family: $font-family-base;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
   }
 }
