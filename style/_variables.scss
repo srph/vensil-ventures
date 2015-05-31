@@ -98,6 +98,7 @@ $screen-sm-min: 760px;
 $screen-sm-max: $screen-md-min - 1;
 $screen-xs-min: 480px;
 $screen-xs-max: $screen-sm-min - 1;
+$screen: new-breakpoint($screen-md-min);
 $tablet: new-breakpoint($screen-sm-min);
 $mobile: new-breakpoint($screen-xs-min);
 
