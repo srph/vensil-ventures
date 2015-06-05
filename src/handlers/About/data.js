@@ -11,7 +11,7 @@ export default [
     { 'title': 'Mike & Mie', 'date': 'January 01, 2015', 'thumbnail': 'mike-mie' }
   ],
   [
-    { 'title': 'Fritz & Whenna', 'date': 'December 26, 2014', 'thumbnail': 'fritz-wheena' },
+    { 'title': 'Fritz & Whenna', 'date': 'December 26, 2014', 'thumbnail': 'fritz-whenna' },
     { 'title': 'Mharee Irish', 'date': 'December 20, 2014', 'thumbnail': 'mharee-irish' },
     { 'title': 'Shirlyn Joy 18th Birthday', 'date': 'October 22, 2014', 'thumbnail': 'shirlyn-joy-18th-birthday' }
   ]
