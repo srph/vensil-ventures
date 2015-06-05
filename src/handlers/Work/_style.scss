@@ -17,13 +17,16 @@ $work-card-tint-blue: linear-gradient(90deg, #05BCF2, #00FFEC); // blue
 $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column-count)) / 2);
 
 .work {
-  min-height: 100vh;
   width: 100%;
   padding-top: $handle-padding;
   padding-bottom: $handle-padding;
 
+  /**
+   * The button below the list linking to the FB Page's Albums.
+   */
   // Centers the button
   .work__more-btn-container { text-align: center; }
+  // The actual element
   .work__more-btn {
     display: none;
     @include btn(true);
@@ -98,8 +101,72 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     @include media($tablet) { float: none; }
   }
 
-  // Shown only for small screens
-  .work__card .work__card__info {
+  /**
+   * Card thumbnails
+   */
+  .work__card > .work__card__thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $work-card-size;
+    height: $work-card-size;
+    transition: left 0.1s cubic-bezier(0, 0, 0.4, 1);
+
+    @include media($screen) { z-index: $work-card-thumbnail-z; }
+  }
+  // slide to left effect
+  .work__card:hover > .work__card__thumbnail {
+    @include media($screen) {
+      // The amount to slide to the left when the thumb is hovered
+      left: -($work-card-size - $work-card-padding);
+    }
+  }
+
+  /*
+   * Card thumbnail tints (gradient tints over the thumbnail)
+   */
+  .work__card::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $work-card-size;
+    width: $work-card-size;
+    opacity: 0;
+
+    @include media($screen) {
+      z-index: $work-card-tint-z !important;
+      opacity: 0.6;
+    }
+  }
+  // Slide to left
+  // A hover the the containing element
+  .work__card:hover::before {
+    @include media($screen) {
+      // The amount to slide to the left when the thumb is hovered
+      left: -($work-card-size - $work-card-padding);
+    }
+  }
+  // staircase-pattern color
+  // blue
+  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 1)::before, // 1r 1c
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 3)::before, // 2c 3r
+  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 1)::before { background: $work-card-tint-blue !important; } // 3c 2r
+  // purple
+  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 3)::before, // 1c 3r
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 2)::before, // 2c 2r
+  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 3)::before { background: $work-card-tint-purple !important; } // 3r 3r
+  // orange
+  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 2)::before, // 1c 2r
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 4)::before, // 1c 4r
+  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 2)::before, //  3c 2r
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 1)::before { background: $work-card-tint-orange !important; } // 2c 1r
+
+  /*
+   * Card information
+   */
+  .work__card > .work__card__info {
     position: absolute;
     left: $work-card-padding;
     bottom: $work-card-padding;
@@ -113,73 +180,33 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
       background: transparent;
       z-index: $work-card-info-z;
     }
-  }
 
-  .work__card__info > .work__card__info__heading {
-    @extend h4;
-    margin-top: 0;
-    color: #fff;
-  }
+    // heading (title)
+    & > .work__card__info__heading {
+      @extend h4;
+      margin-top: 0;
+      color: #fff;
+    }
 
-  .work__card__info > .work__card__info__date {
-    @extend h6;
-    margin-bottom: 0;
-    font-family: $font-family-base;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-  }
+    // date
+    & > .work__card__info__date {
+      @extend h6;
+      margin-bottom: 0;
+      font-family: $font-family-base;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+    }
 
-  .work__card__info > .work__card__info__more-btn {
-    margin-top: 20px;
-    @include btn(true);
-    @include btn--variant(default, true);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: $font-size-small;
-  }
-
-
-  // staircase-pattern color
-  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 1)::before,
-  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 1)::before,
-  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 3)::before { background: $work-card-tint-blue !important; }
-
-  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 2)::before,
-  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 3)::before,
-  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 3)::before, { background: $work-card-tint-purple !important; }
-
-  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 2)::before,
-  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 1)::before,
-  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 2)::before,
-  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 4)::before { background: $work-card-tint-orange !important; }
-  // tint over the image
-  .work__card::before {
-    content: "";
-    display: block;
-    background: #ddd;
-    opacity: 0.6;
-    z-index: $work-card-tint-z !important;
-  }
-
-  // cards
-  .work__card > .work__card__thumbnail,
-  .work__card::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: $work-card-size;
-    height: $work-card-size;
-    transition: left 0.1s cubic-bezier(0, 0, 0.4, 1);
-
-    @include media($screen) { z-index: $work-card-thumbnail-z; }
-  }
-
-  .work__card:hover > .work__card__thumbnail,
-  .work__card:hover::before {
-    @include media($screen) {
-      // The amount to slide to the left when the thumb is hovered
-      left: -($work-card-size - $work-card-padding);
+    // see more btn
+    // @screen screen
+    & > .work__card__info__more-btn {
+      margin-top: 20px;
+      @include btn(true);
+      @include btn--variant(default, true);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: $font-size-small;
     }
   }
 }
