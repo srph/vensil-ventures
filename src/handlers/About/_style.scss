@@ -98,4 +98,9 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     letter-spacing: 1px;
     color: #fff;
   }
+  
+  .about__card > .about__card__thumbnail {
+    width: $about-card-size;
+    height: $about-card-size;
+  }
 }
