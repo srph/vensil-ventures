@@ -1,9 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import AboutCard from './AboutCard';
+import Card from './Card';
 
-export default class AboutCardList extends React.Component {
+export default class CardList extends React.Component {
   static propTypes = {
     /**
      * Set of events in this column
@@ -12,7 +12,7 @@ export default class AboutCardList extends React.Component {
 
     /**
      * Append `--half` modifier class to the element
-     * (about__card-container--half)
+     * (work__card-container--half)
      */
     half: React.PropTypes.bool
   };
@@ -24,13 +24,13 @@ export default class AboutCardList extends React.Component {
   render() {
     let { list, half } = this.props;
 
-    let className = classnames('about__card-container', {
-      'about__card-container--half': half
+    let className = classnames('work__card-container', {
+      'work__card-container--half': half
     });
 
     return (
       <ul className={className}>
-        {list.map((event, i) => <AboutCard data={event} key={i} />)}
+        {list.map((event, i) => <Card data={event} key={i} />)}
       </ul>
     );
   }

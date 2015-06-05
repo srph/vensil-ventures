@@ -1,0 +1,152 @@
+$work-card-bg: #252424;
+$work-card-size: 300px;
+$work-card-count: 10;
+$work-card-padding: 20px;
+$work-card-column-count: 3;
+// z-index
+$work-card-info-z: 0;
+$work-card-thumbnail-z: 1;
+// L&R padding for the container. Used to center the content manually
+$work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column-count)) / 2);
+
+.work {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: $handle-padding;
+  padding-bottom: $handle-padding;
+
+  // Centers the button
+  .work__more-btn-container { text-align: center; }
+  .work__more-btn {
+    display: none;
+    @include btn(true);
+    @include btn--variant(success, true);
+    margin-top: $handle-padding;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+
+    @include media($screen) { display: inline-block; }
+  }
+
+  // The scrolling container.
+  // Makes it scrollable.
+  .work__container {
+    @include g-container;
+    padding: 0;
+    width: 100%;
+    height: $work-card-size;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    @include media($screen) {
+      overflow-x: auto;
+      height: auto;
+      // Unfortunately, I can't think of a good non-hackish way to center
+      // the children elements (which are `ul` elements)
+      // inside this container element (this class), so we will have to manually
+      // compute to center the content.
+      //
+      // Since 420px is the minimum screen size we handle, and
+      // the size of each card is 300-square, we can manually compute the padding
+      // to center each column (each `ul` element) inside the container restrictions.
+      padding-left: $work-container-padding;
+      padding-right: $work-container-padding;
+    }
+  }
+
+  // Contains the float, and lines each horizontally
+  .work__container > .work__container__inner {
+    @include clearfix;
+    width: $work-card-count * $work-card-size;
+    height: $work-card-size;
+
+    @include media($tablet) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // This is a `ul`
+  .work__card-container {
+    @include remove-list-defaults;
+    float: left;
+
+    @include media($tablet) {
+      &.work__card-container--half { margin-top: ($work-card-size / 2); }
+      &.work__card-container--full { margin-top: $work-card-size; }
+    }
+  }
+
+  // This is an `li`
+  .work__card {
+    // The hides the card thumbnail when it slides to the left on hover (for screens).
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: $work-card-size;
+    height: $work-card-size;
+    background: $work-card-bg; // Random value atm
+
+    @include media($tablet) { float: none; }
+  }
+
+  // Shown only for small screens
+  .work__card .work__card__info {
+    position: absolute;
+    left: $work-card-padding;
+    bottom: $work-card-padding;
+    padding: $work-card-padding;
+    width: ($work-card-size - ($work-card-padding * 2));
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+
+    @include media($tablet) {
+      bottom: inherit;
+      background: transparent;
+      z-index: $work-card-info-z;
+    }
+  }
+
+  .work__card__info > .work__card__info__heading {
+    @extend h4;
+    margin-top: 0;
+    color: #fff;
+  }
+
+  .work__card__info > .work__card__info__date {
+    @extend h6;
+    margin-bottom: 0;
+    font-family: $font-family-base;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  .work__card__info > .work__card__info__more-btn {
+    margin-top: 20px;
+    @include btn(true);
+    @include btn--variant(default, true);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+  }
+
+  .work__card > .work__card__thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $work-card-size;
+    height: $work-card-size;
+    transition: left 0.1s cubic-bezier(0, 0, 0.4, 1);
+
+    @include media($screen) { z-index: $work-card-thumbnail-z; }
+  }
+
+  .work__card:hover > .work__card__thumbnail {
+    @include media($screen) {
+      // The amount to slide to the left when the thumb is hovered
+      left: -($work-card-size - $work-card-padding);
+    }
+  }
+}
