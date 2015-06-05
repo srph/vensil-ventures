@@ -3,7 +3,6 @@ import React from 'react';
 import Home from './handlers/Home';
 import About from './handlers/About';
 import Gallery from './handlers/Gallery';
-import Services from './handlers/Services';
 import Contact from './handlers/Contact';
 
 import Footer from './components/Footer';
@@ -15,7 +14,6 @@ class App extends React.Component {
         <Home />
         <About />
         <Gallery />
-        <Services />
         <Contact />
         <Footer />
       </div>
