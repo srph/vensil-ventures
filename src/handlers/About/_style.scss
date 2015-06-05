@@ -15,6 +15,19 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
   padding-top: $handle-padding;
   padding-bottom: $handle-padding;
 
+  // Centers the button
+  .about__more-btn-container { text-align: center; }
+  .about__more-btn {
+    @include btn(true);
+    @include btn--variant(success, true);
+    margin-top: $handle-padding;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+
+    @include media($screen) { display: inline-block; }
+  }
+
   // The scrolling container.
   // Makes it scrollable.
   .about__container {
@@ -85,6 +98,7 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     padding: $about-card-padding;
     width: ($about-card-size - ($about-card-padding * 2));
     background: rgba(0,0,0,0.5);
+    text-align: center;
 
     @include media($tablet) {
       bottom: inherit;

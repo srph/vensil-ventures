@@ -15,6 +15,11 @@ export default class About extends React.Component {
             ))}
           </div>
         </div>
+        <div className="about__more-btn-container">
+          <a href="//facebook.com/vensilsventuresPHOTOBOOTH/photos_stream?tab=photos_albums" className="about__more-btn">
+            More of our work
+          </a>
+        </div>
       </div>
     );
   }
