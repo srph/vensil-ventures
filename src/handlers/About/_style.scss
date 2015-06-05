@@ -1,7 +1,11 @@
+$about-card-bg: #252424;
 $about-card-size: 300px;
 $about-card-count: 10;
 $about-card-padding: 20px;
 $about-card-column-count: 3;
+// z-index
+$about-card-info-z: 0;
+$about-card-thumbnail-z: 1;
 // L&R padding for the container. Used to center the content manually
 $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-column-count)) / 2);
 
@@ -68,7 +72,7 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     float: left;
     width: $about-card-size;
     height: $about-card-size;
-    background: #ddd; // Random value atm
+    background: $about-card-bg; // Random value atm
 
     @include media($tablet) { float: none; }
   }
@@ -82,7 +86,11 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     width: ($about-card-size - ($about-card-padding * 2));
     background: rgba(0,0,0,0.5);
 
-    @include media($tablet) { display: none; }
+    @include media($tablet) {
+      bottom: inherit;
+      background: transparent;
+      z-index: $about-card-info-z;
+    }
   }
 
   .about__card__info > .about__card__info__heading {
@@ -107,6 +115,8 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     width: $about-card-size;
     height: $about-card-size;
     transition: left 0.1s cubic-bezier(0, 0, 0.4, 1);
+
+    @include media($screen) { z-index: $about-card-thumbnail-z; }
   }
 
   .about__card:hover > .about__card__thumbnail {

@@ -33,7 +33,7 @@ $tw-bg-color: #1FC3D0;
 
   .footer__social-media__container {
     @include clearfix;
-    float: left;
+    float: right;
     // Lighten all icons
     &:hover > .footer__social-media__icon { opacity: 0.5; }
 
