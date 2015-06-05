@@ -2,6 +2,8 @@ $about-card-size: 300px;
 $about-card-count: 10;
 $about-card-padding: 20px;
 $about-card-column-count: 3;
+// L&R padding for the container. Used to center the content manually
+$about-container-padding: (($screen-md-min - ($about-card-size * $about-card-column-count)) / 2);
 
 .about {
   min-height: 100vh;
@@ -31,8 +33,8 @@ $about-card-column-count: 3;
       // Since 420px is the minimum screen size we handle, and
       // the size of each card is 300-square, we can manually compute the padding
       // to center each column (each `ul` element) inside the container restrictions.
-      padding-left: (($screen-md-min - ($about-card-size * $about-card-column-count)) / 2);
-      padding-right: (($screen-md-min - ($about-card-size * $about-card-column-count)) / 2);
+      padding-left: $about-container-padding;
+      padding-right: $about-container-padding;
     }
   }
 
