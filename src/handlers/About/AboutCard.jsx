@@ -12,6 +12,7 @@ export default class AboutCard extends React.Component {
 
     return (
       <li className="about__card">
+        <img className="about__card__thumbnail" src={`/img/about/${thumbnail}.jpg`} />
         <header className="about__card__info">
           <div className="about__card__info__heading">{title}</div>
           <div className="about__card__info__date">{date}</div>
