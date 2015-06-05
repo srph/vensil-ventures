@@ -1,5 +1,7 @@
 /*
  * .btn component
+ * inverse - border out / background in
+ * normal - border in / background out
  */
 @mixin btn($local-inverse: false, $local-child: ".__caret", $local-animate: false) {
   display: inline-block;
@@ -83,7 +85,11 @@
       border-color: darken($local-brand-name, $brand__base-dark);
     }
   } @else {
-    &, &:hover { color: #fff;}
+    @if $local-brand == default {
+      &, &:hover { color: $gray--dark; }
+    } @else {
+      &, &:hover { color: #fff; }
+    }
 
     @if $local-brand == primary and $local-gradient == true {
       background: $brand-primary__gradient;

@@ -16,6 +16,7 @@ export default class AboutCard extends React.Component {
         <header className="about__card__info">
           <div className="about__card__info__heading">{title}</div>
           <div className="about__card__info__date">{date}</div>
+          <a href="#" className="about__card__info__more-btn">More Photos</a>
         </header>
       </li>
     );

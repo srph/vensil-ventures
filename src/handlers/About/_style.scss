@@ -108,6 +108,15 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     color: #fff;
   }
 
+  .about__card__info > .about__card__info__more-btn {
+    margin-top: 20px;
+    @include btn(true);
+    @include btn--variant(default, true);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+  }
+
   .about__card > .about__card__thumbnail {
     position: absolute;
     top: 0;
