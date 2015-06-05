@@ -18,6 +18,7 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
   // Centers the button
   .about__more-btn-container { text-align: center; }
   .about__more-btn {
+    display: none;
     @include btn(true);
     @include btn--variant(success, true);
     margin-top: $handle-padding;
