@@ -6,6 +6,13 @@ $work-card-column-count: 3;
 // z-index
 $work-card-info-z: 0;
 $work-card-thumbnail-z: 1;
+$work-card-tint-z: 2;
+//
+$work-card-thumbnail-transition: left 0.1s cubic-bezier(0, 0, 0.4, 1);
+// varying tints
+$work-card-tint-orange: linear-gradient(90deg, #F26805, #FFC200); // orange
+$work-card-tint-purple: linear-gradient(90deg, #BF05F2, #FF009B); // purple
+$work-card-tint-blue: linear-gradient(90deg, #05BCF2, #00FFEC); // blue
 // L&R padding for the container. Used to center the content manually
 $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column-count)) / 2);
 
@@ -132,7 +139,32 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     font-size: $font-size-small;
   }
 
-  .work__card > .work__card__thumbnail {
+
+  // staircase-pattern color
+  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 1)::before,
+  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 1)::before,
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 3)::before { background: $work-card-tint-blue !important; }
+
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 2)::before,
+  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 3)::before,
+  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 3)::before, { background: $work-card-tint-purple !important; }
+
+  .work__card-container:nth-child(0n + 3) > .work__card:nth-child(0n + 2)::before,
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 1)::before,
+  .work__card-container:nth-child(0n + 1) > .work__card:nth-child(0n + 2)::before,
+  .work__card-container:nth-child(0n + 2) > .work__card:nth-child(0n + 4)::before { background: $work-card-tint-orange !important; }
+  // tint over the image
+  .work__card::before {
+    content: "";
+    display: block;
+    background: #ddd;
+    opacity: 0.6;
+    z-index: $work-card-tint-z !important;
+  }
+
+  // cards
+  .work__card > .work__card__thumbnail,
+  .work__card::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -143,7 +175,8 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     @include media($screen) { z-index: $work-card-thumbnail-z; }
   }
 
-  .work__card:hover > .work__card__thumbnail {
+  .work__card:hover > .work__card__thumbnail,
+  .work__card:hover::before {
     @include media($screen) {
       // The amount to slide to the left when the thumb is hovered
       left: -($work-card-size - $work-card-padding);
