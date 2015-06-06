@@ -66,20 +66,30 @@ $contact-info-padding: 12.5px;
       color: $gray--light;
     }
 
+    /**
+     * A content section
+     */
     & .contact__info__content { margin-bottom: ($contact-info-padding * 2); }
 
-    & .contact__info__highlight {
-      border-bottom: 1px dashed $gray--light;
+    /**
+     * Highlight text
+     */
+    & .contact__info__highlight { border-bottom: 1px dashed $gray--light; }
+    // Adjust `a` defaults
+    & a.contact__info__highlight {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover { color: $gray--lighter; }
     }
 
     /**
-     * Sets the btn below the content (which is a span)
-     * Also sets a margin below the content.
-     */
-    & .contact__info__email-btn-container { margin-top: $contact-info-padding; }
-    /**
      * "Send us an email" button
      */
+    // Sets the btn below the content (which is a span)
+    // Also sets a margin below the content.
+    & .contact__info__email-btn-container { margin-top: $contact-info-padding; }
+    // Actual element
     & .contact__info__email-btn {
       @include btn(true);
       @include btn--variant(success, true);
