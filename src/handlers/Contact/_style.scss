@@ -1,5 +1,6 @@
 $contact-bg: $gray--darker;
-$contact-map-height: 400px;
+$contact-map-height: 300px; // For mobile
+$contact-content-height: 400px; // Default and map for screens
 $contact-map-width: 70%;
 $contact-info-width: 30%;
 $contact-info-padding: 12.5px;
@@ -26,14 +27,17 @@ $contact-info-padding: 12.5px;
   .contact__map {
     overflow: hidden;
     float: left;
-    height: $contact-map-height;
+    height: ($contact-map-height);
     width: 100%;
 
-    @include media($screen) { width: $contact-map-width; }
+    @include media($screen) {
+      height: $contact-content-height;
+      width: $contact-map-width;
+    }
   }
 
   .contact__map > .contact__map__element {
-    height: $contact-map-height;
+    height: $contact-content-height;
     width: 100%;
     border: 0; // iframe border
   }
@@ -44,7 +48,7 @@ $contact-info-padding: 12.5px;
    */
   .contact__info {
     float: left;
-    height: $contact-map-height;
+    height: $contact-content-height;
     width: 100%;
     padding: $contact-info-padding;
     color: #fff;
@@ -55,21 +59,31 @@ $contact-info-padding: 12.5px;
     }
 
     & > .contact__info__heading {
-      @extend .h4;
       text-align: center;
-    }
+      margin-bottom: 20px;
 
-    & .contact__info__content__heading {
-      @extend .h5;
-      margin-top: 0; // Remove typo defaults
-      margin-bottom: 5px;
-      color: $gray--light;
+      & > .contact__info__heading__title { @extend .h4; }
+
+      & > .contact__info__heading__sub {
+        @extend .h5;
+        color: $gray--light;
+      }
     }
 
     /**
      * A content section
      */
     & .contact__info__content { margin-bottom: ($contact-info-padding * 2); }
+
+    /**
+     * Section heading
+     */
+    & .contact__info__content__heading {
+      @extend .h5;
+      margin-top: 0; // Remove typo defaults
+      margin-bottom: 5px;
+      color: $gray--light;
+    }
 
     /**
      * Highlight text

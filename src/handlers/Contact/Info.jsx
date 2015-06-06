@@ -6,7 +6,11 @@ export default class Info extends React.Component {
 
     return (
       <div className="contact__info">
-        <div className="contact__info__heading">Contact Us</div>
+        <div className="contact__info__heading">
+          <div className="contact__info__heading__title">Contact Us</div>
+          <div className="contact__info__heading__sub">Want us to be part of your next event?</div>
+        </div>
+
         <section className="contact__info__content">
           <div className="contact__info__content__heading">Office</div>
           <span className="contact__info__highlight">{config.address}</span>
