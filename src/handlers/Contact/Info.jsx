@@ -13,6 +13,10 @@ export default class Info extends React.Component {
         <section className="contact__info__content">
           <div className="contact__info__content__heading">Email</div>
           <span className="contact__info__highlight">hello@vensils.com</span>
+
+          <div className="contact__info__email-btn-container">
+            <a href="#" className="contact__info__email-btn"> Send us an email! </a>
+          </div>
         </section>
 
         <section className="contact__info__content">
@@ -21,10 +25,6 @@ export default class Info extends React.Component {
           <span className="contact__info__highlight">09164417383</span>,{' '}
           <span className="contact__info__highlight">09164417383</span>.
         </section>
-
-        <a href="#" className="contact__info__email-btn">
-          Send us an email!
-        </a>
       </div>
     );
   }

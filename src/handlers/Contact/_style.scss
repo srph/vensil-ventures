@@ -61,7 +61,8 @@ $contact-info-padding: 12.5px;
 
     & .contact__info__content__heading {
       @extend .h5;
-      margin: 0; // Remove typo defaults
+      margin-top: 0; // Remove typo defaults
+      margin-bottom: 5px;
     }
 
     & .contact__info__content { margin-bottom: ($contact-info-padding * 2); }
@@ -70,6 +71,14 @@ $contact-info-padding: 12.5px;
       border-bottom: 1px dashed $gray--light;
     }
 
+    /**
+     * Sets the btn below the content (which is a span)
+     * Also sets a margin below the content.
+     */
+    & .contact__info__email-btn-container { margin-top: $contact-info-padding; }
+    /**
+     * "Send us an email" button
+     */
     & .contact__info__email-btn {
       @include btn(true);
       @include btn--variant(success, true);
