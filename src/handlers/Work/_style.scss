@@ -3,11 +3,11 @@ $work-card-size: 300px;
 $work-card-count: 10;
 $work-card-padding: 20px;
 $work-card-column-count: 3;
-// z-index
+// z-index for screens
 $work-card-info-z: 0;
 $work-card-thumbnail-z: 1;
 $work-card-tint-z: 2;
-//
+// tint & thumbnail tint
 $work-card-thumbnail-transition: left 0.1s cubic-bezier(0, 0, 0.4, 1);
 // varying tints
 $work-card-tint-orange: linear-gradient(90deg, #F26805, #FFC200); // orange
