@@ -13,7 +13,9 @@ export default class Info extends React.Component {
 
         <section className="contact__info__content">
           <div className="contact__info__content__heading">Office</div>
-          <span className="contact__info__highlight">{config.address}</span>
+          <a href="https://goo.gl/maps/IhHLG" className="contact__info__highlight">
+            {config.address}
+          </a>
         </section>
 
         <section className="contact__info__content">
