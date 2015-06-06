@@ -1,0 +1,55 @@
+$contact-bg: $gray--darker;
+$contact-map-height: 300px;
+$contact-map-width: 70%;
+$contact-info-width: 30%;
+$contact-info-padding: 12.5px;
+/**
+ * I. contact
+ * II. contact__row
+ * III. contact__map
+ * IV. contact__map__element
+ * V. contact__info
+ */
+.contact {
+  background: $contact-bg;
+
+  .contact__row {
+    @include row;
+    width: 100%;
+  }
+
+  /**
+   * We're not using our grid column mixins since we need something simpler
+   * row (the parent) + this column (float, width) + the other column(float, width)
+   */
+  .contact__map {
+    overflow: hidden;
+    float: left;
+    height: $contact-map-height;
+    width: 100%;
+
+    @include media($screen) { width: $contact-map-width; }
+  }
+
+  .contact__map > .contact__map__element {
+    height: $contact-map-height;
+    width: 100%;
+    border: 0; // iframe border
+  }
+
+  /**
+   * We're not using our grid column mixins since we need something simpler
+   * row (the parent) + this column (float, width) + the other column(float, width)
+   */
+  .contact__info {
+    float: left;
+    height: $contact-map-height;
+    width: 100%;
+    padding: $contact-info-padding;
+
+    @include media($screen) {
+      width: $contact-info-width;
+      padding: ($contact-info-padding * 2);
+    }
+  }
+}
