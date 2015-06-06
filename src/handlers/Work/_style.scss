@@ -71,7 +71,7 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     width: $work-card-count * $work-card-size;
     height: $work-card-size;
 
-    @include media($tablet) {
+    @include media($screen) {
       width: 100%;
       height: auto;
     }
@@ -82,7 +82,7 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     @include remove-list-defaults;
     float: left;
 
-    @include media($tablet) {
+    @include media($screen) {
       &.work__card-container--half { margin-top: ($work-card-size / 2); }
       &.work__card-container--full { margin-top: $work-card-size; }
     }
@@ -98,7 +98,7 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     height: $work-card-size;
     background: $work-card-bg; // Random value atm
 
-    @include media($tablet) { float: none; }
+    @include media($screen) { float: none; }
   }
 
   /**
@@ -175,7 +175,7 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     background: rgba(0,0,0,0.5);
     text-align: center;
 
-    @include media($tablet) {
+    @include media($screen) {
       bottom: inherit;
       background: transparent;
       z-index: $work-card-info-z;

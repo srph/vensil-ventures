@@ -48,7 +48,7 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     width: ($about-card-count * $about-card-size);
     height: $about-card-size;
 
-    @include media($tablet) {
+    @include media($screen) {
       width: 100%;
       height: auto;
     }
