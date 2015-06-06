@@ -63,6 +63,7 @@ $contact-info-padding: 12.5px;
       @extend .h5;
       margin-top: 0; // Remove typo defaults
       margin-bottom: 5px;
+      color: $gray--light;
     }
 
     & .contact__info__content { margin-bottom: ($contact-info-padding * 2); }
