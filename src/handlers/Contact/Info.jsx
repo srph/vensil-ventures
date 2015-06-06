@@ -29,7 +29,10 @@ export default class Info extends React.Component {
 
         <section className="contact__info__content">
           <div className="contact__info__content__heading">Phone</div>
-          <span className="contact__info__highlight">{config.phone}</span>
+          <span className="contact__info__highlight contact__info__highlight--spaced">{config.phone}</span>,{' '}
+          <span className="contact__info__highlight contact__info__highlight--spaced">{config.mobile.sun}</span>,{' '}
+          <span className="contact__info__highlight contact__info__highlight--spaced">{config.mobile.globe}</span>,{' '}
+          <span className="contact__info__highlight contact__info__highlight--spaced">{config.mobile.smart}</span>.
         </section>
       </div>
     );

@@ -99,6 +99,7 @@ $contact-info-padding: 12.5px;
       text-decoration: none;
 
       &:hover { color: $gray--lighter; }
+      &.contact__info__highlight--spaced { letter-spacing: 1px; }
     }
 
     /**
