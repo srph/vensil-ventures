@@ -3,6 +3,7 @@ $contact-map-height: 300px;
 $contact-map-width: 70%;
 $contact-info-width: 30%;
 $contact-info-padding: 12.5px;
+
 /**
  * I. contact
  * II. contact__row
@@ -46,10 +47,20 @@ $contact-info-padding: 12.5px;
     height: $contact-map-height;
     width: 100%;
     padding: $contact-info-padding;
+    color: #fff;
 
     @include media($screen) {
       width: $contact-info-width;
       padding: ($contact-info-padding * 2);
+    }
+
+    & > .contact__info__heading {
+      @extend .h4;
+      text-align: center;
+    }
+
+    & .contact__info__highlight {
+      border-bottom: 1px dashed $gray--light;
     }
   }
 }
