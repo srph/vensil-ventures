@@ -25,6 +25,10 @@ $contact-info-padding: 12.5px;
    * row (the parent) + this column (float, width) + the other column(float, width)
    */
   .contact__map {
+    // This makes the map static.
+    // Unfortunately, I (srph) found embedding static google maps
+    // to be a fucking pain in the ass.
+    pointer-events: none;
     overflow: hidden;
     float: left;
     height: ($contact-map-height);
