@@ -28,6 +28,9 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     overflow-x: scroll;
     overflow-y: hidden;
 
+    // Remove g-container's fucking default
+    @include media($tablet) { width: 100%; }
+
     @include media($screen) {
       overflow-x: auto;
       height: auto;
@@ -108,6 +111,11 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     margin-top: 0;
     color: #fff;
     text-align: center;
+
+    &.about__card__heading--screen {
+      display: none;
+      @include media($screen) { display: block; }
+    }
   }
 
   // date

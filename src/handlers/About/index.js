@@ -4,11 +4,15 @@ export default class About extends React.Component {
   render() {
     return (
       <div className="about">
+        <div className="about__heading">
+          <div className="about__heading__title">About Us</div>
+        </div>
+
         <div className="about__container">
           <div className="about__container__inner">
             <ul className="about__card-container about__card-container">
               <li className="about__card about__card--main">
-                <div className="about__card__heading"> About Us </div>
+                <div className="about__card__heading about__card__heading--screen"> About Us </div>
                 <div className="about__card__info">
                   Vensil's Ventures is a photo booth service based on Manila. Although, we also offer other services; &nbsp;
                   Interested? Then read on!

@@ -29,6 +29,10 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     overflow-x: scroll;
     overflow-y: hidden;
 
+    // Remove g-container's fucking default
+    // I badly need to improve the grid (fucking grid)
+    @include media($tablet) { width: 100%; }
+
     @include media($screen) {
       overflow-x: auto;
       height: auto;
