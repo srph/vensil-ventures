@@ -18,15 +18,14 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
    * Creates a scrollable container
    */
   .about__container {
-    @include g-container;
     padding-top: $handle-padding;
     padding-bottom: $handle-padding;
     width: 100%;
-    height: $about-card-size;
     overflow-x: scroll;
     overflow-y: hidden;
 
     @include media($screen) {
+      @include g-container;
       overflow-x: auto;
       height: auto;
       // Unfortunately, I can't think of a good non-hackish way to center
