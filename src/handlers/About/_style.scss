@@ -30,7 +30,7 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
 
     // Remove g-container's fucking default
     // I badly need to improve the grid (fucking grid)
-    @include media($tablet) { width: 100%; }
+    @include media(min-width $screen-sm-min max-width $screen-md-min) { width: 100%; }
 
     @include media($screen) {
       overflow-x: auto;

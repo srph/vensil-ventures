@@ -19,6 +19,11 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
 .work {
   width: 100%;
 
+  @include media($screen) {
+    padding-top: $handle-padding;
+    padding-bottom: $handle-padding;
+  }
+
   // The scrolling container.
   // Makes it scrollable.
   .work__container {
@@ -31,7 +36,7 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
 
     // Remove g-container's fucking default
     // I badly need to improve the grid (fucking grid)
-    @include media($tablet) { width: 100%; }
+    @include media(min-width $screen-sm-min max-width $screen-md-min) { width: 100%; }
 
     @include media($screen) {
       overflow-x: auto;
