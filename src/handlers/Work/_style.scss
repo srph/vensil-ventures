@@ -218,20 +218,66 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
   }
 
   /**
-   * The button below the list linking to the FB Page's Albums.
+   * Normal cards
+   *
+   * I'd rather make another similar one because the original (`work__card`)
+   * was a bit too specific, and I could imagine how overriding the styling
+   * would be a terrible idea.
+   *
+   * Also, we have variables for a reason, right? RIGHT?!
    */
-  // Centers the button
-  .work__more-btn-container { text-align: center; }
-  // The actual element
-  .work__more-btn {
-    display: none;
-    @include btn(true);
-    @include btn--variant(success, true);
-    margin-top: $handle-padding;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: $font-size-small;
+  .work__card-normal {
+    float: left;
+    padding: $work-card-padding;
+    height: $work-card-size;
+    width: $work-card-size;
+    overflow: hidden;
+    background: $work-card-bg;
 
-    @include media($screen) { display: inline-block; }
+    // Styling that applies to all
+    color: #fff;
+    text-align: center;
+
+    // Align the cards vertically
+    @include media($screen) { float: none; }
+
+    &.work__card-normal--screen {
+      display: none;
+      @include media($screen) { display: block; }
+    }
+    // Used by the `more photos` card
+    &.work__card-normal--mobile {
+      @include media($screen) { display: none; }
+    }
+
+    /**
+     * Headings
+     */
+    > .work__card-normal__heading { @extend h1; }
+    > .work__card-normal__sub {
+      font-size: $font-size-small;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /**
+     * Specifically for the `More` card (more button)
+     */
+    .work__card-normal__more-btn-container {
+      display: table;
+      height: 100%;
+      width: 100%;
+    }
+    .work__card-normal__more-btn-container__inner {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .work__card-normal__more-btn {
+      @include btn(true);
+      @include btn--variant(success, true);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: $font-size-small;
+    }
   }
 }
