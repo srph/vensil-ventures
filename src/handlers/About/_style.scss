@@ -18,6 +18,25 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
     padding-top: $handle-padding;
     padding-bottom: $handle-padding;
   }
+
+  /**
+   * Heading for mobile
+   */
+  .about__heading {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: $brand-primary__gradient;
+
+    @include media($screen) { display: none; }
+
+    > .about__heading__title {
+      @extend h1;
+      margin: 0; // Remove heading defaults
+      color: #fff;
+      text-align: center;
+    }
+  }
+
   /**
    * Creates a scrollable container
    */

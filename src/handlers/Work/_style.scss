@@ -24,6 +24,24 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
     padding-bottom: $handle-padding;
   }
 
+  /**
+   * Heading for mobile
+   */
+  .work__heading {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: $brand-primary__gradient;
+
+    @include media($screen) { display: none; }
+
+    > .work__heading__title {
+      @extend h1;
+      margin: 0; // Remove heading defaults
+      color: #fff;
+      text-align: center;
+    }
+  }
+
   // The scrolling container.
   // Makes it scrollable.
   .work__container {
