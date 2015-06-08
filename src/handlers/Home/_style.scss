@@ -1,3 +1,5 @@
+$home-bg-img: url(#{$img-dir}/hbg.webp);
+
 .home {
   position: relative;
   overflow: hidden;
@@ -6,8 +8,8 @@
   width: 100%;
   color: #fff;
   background: #000;
-  background-image: url(#{$img-dir}/hbg.jpg);
-  background-image: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(#{$img-dir}/jumbotron-bg.webp);
+  background-image: $home-bg-img;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.6)), $home-bg-img;
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
