@@ -14,8 +14,10 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
  * VI. about__card__info
  */
 .about {
-  padding-top: $handle-padding;
-  padding-bottom: $handle-padding;
+  @include media($screen) {
+    padding-top: $handle-padding;
+    padding-bottom: $handle-padding;
+  }
   /**
    * Creates a scrollable container
    */
