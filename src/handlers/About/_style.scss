@@ -19,7 +19,8 @@ $about-container-padding: (($screen-md-min - ($about-card-size * $about-card-col
    */
   .about__container {
     @include g-container;
-    padding: 0;
+    padding-top: $handle-padding;
+    padding-bottom: $handle-padding;
     width: 100%;
     height: $about-card-size;
     overflow-x: scroll;

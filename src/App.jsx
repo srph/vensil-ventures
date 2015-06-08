@@ -2,6 +2,7 @@ require('babel/polyfill');
 import React from 'react';
 import Home from './handlers/Home';
 import About from './handlers/About';
+import Quote from './handlers/Quote';
 import Work from './handlers/Work';
 import Contact from './handlers/Contact';
 
@@ -13,6 +14,7 @@ class App extends React.Component {
       <div>
         <Home />
         <About />
+        <Quote />
         <Work />
         <Contact />
       </div>

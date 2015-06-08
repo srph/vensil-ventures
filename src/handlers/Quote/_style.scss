@@ -1,0 +1,24 @@
+.quote {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background-color: $gray;
+  background-image: url(#{$img-dir}/qbg.gif);
+
+  .quote__container {
+    @include g-container;
+    display: table;
+    height: 100%;
+  }
+
+  .quote__container > .quote__container__inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .quote__text {
+    @extend h2;
+    color: #fff;
+  }
+}
