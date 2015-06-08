@@ -8,7 +8,7 @@ import ParallaxOpacity from '../../components/ParallaxOpacity';
 export default class Home extends React.Component {
   render() {
     return (
-      <div className="home">
+      <div className="home" id="home">
         <div className="home__outer">
           <div className="home__inner">
             <ParallaxOpacity>

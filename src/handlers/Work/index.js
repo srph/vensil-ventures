@@ -6,7 +6,7 @@ import CardColumnIota from './CardColumnIota';
 export default class Work extends React.Component {
   render() {
     return (
-      <div className="work">
+      <div className="work" id="work">
         <div className="work__heading">
           <div className="work__heading__title">Work</div>
         </div>
