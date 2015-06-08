@@ -21,24 +21,6 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
   padding-top: $handle-padding;
   padding-bottom: $handle-padding;
 
-  /**
-   * The button below the list linking to the FB Page's Albums.
-   */
-  // Centers the button
-  .work__more-btn-container { text-align: center; }
-  // The actual element
-  .work__more-btn {
-    display: none;
-    @include btn(true);
-    @include btn--variant(success, true);
-    margin-top: $handle-padding;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: $font-size-small;
-
-    @include media($screen) { display: inline-block; }
-  }
-
   // The scrolling container.
   // Makes it scrollable.
   .work__container {
@@ -208,5 +190,23 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
       text-transform: uppercase;
       font-size: $font-size-small;
     }
+  }
+
+  /**
+   * The button below the list linking to the FB Page's Albums.
+   */
+  // Centers the button
+  .work__more-btn-container { text-align: center; }
+  // The actual element
+  .work__more-btn {
+    display: none;
+    @include btn(true);
+    @include btn--variant(success, true);
+    margin-top: $handle-padding;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: $font-size-small;
+
+    @include media($screen) { display: inline-block; }
   }
 }
