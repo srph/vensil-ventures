@@ -288,6 +288,8 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
   // This is hidden for mobile screens
   .work__more-btn {
     display: none;
+    // Just the top since the containing class (main class)
+    // itself implements a top-bottom padding
     margin-top: $handle-padding;
     text-align: center;
 
