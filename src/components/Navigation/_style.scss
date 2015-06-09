@@ -10,8 +10,7 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
   height: $nav-height;
   width: 100%;
   background: $nav-bg-color;
-  border-bottom: 1px solid $gray--light;
-  overflow: hidden;
+  border-bottom: 1px solid $gray--lighter;
   text-align: center;
   @include clearfix();
 
@@ -38,11 +37,7 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
     .nav__navbar > li > a { color: #fff; }
   }
 
-  .nav__container {
-    @include media($tablet) {
-      @include g-container();
-    }
-  }
+  .nav__container { @include g-container; }
 
   /**
    * Header

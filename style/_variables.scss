@@ -33,7 +33,7 @@ $brand-primary--sub: #d22cd9; // For gradient
 $brand-primary__gradient: linear-gradient(90deg, $brand-primary, $brand-primary--sub);
 $brand-primary__gradient--dark: linear-gradient(90deg, darken($brand-primary, $brand__base-dark), darken($brand-primary--sub, $brand__base-dark));
 $brand-success: #5cb85c;
-$brand-info: #268bd2;
+$brand-info: #28affa;
 $brand-warning: #f0ad4e;
 $brand-danger: #d9534f;
 

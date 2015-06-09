@@ -1,3 +1,13 @@
+$dropdown-bg: #fff;
+$dropdown-sub-bg: $brand-primary;
+$dropdown-border: $gray--lighter;
+$dropdown-arrow-size: 6px;
+$dropdown-border-radius: $border-radius-base;
+
+/**
+ * Note:
+ * I did some experiment in this part, trying to check if selector nesting isn't so bad.
+ */
 .c-dropdown {
   position: relative;
 
@@ -5,9 +15,9 @@
     @include remove-list-defaults();
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
     display: block;
-    // visibility: hidden;
+    visibility: hidden;
 
     &.c-dropdown__menu--open {
       visibility: visible;
@@ -20,9 +30,65 @@
     // Positions the dropdown to the right
     &.c-dropdown__menu--right {
       left: initial;
-      right: 0;
+      right: 10px; // Hard-coded value
+
+      &:before {
+        left: initial;
+        right: $dropdown-arrow-size;
+      }
     }
 
-    &.c-dropdown__menu--dropup { top: 0; }
+    // Arrow
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -($dropdown-arrow-size);
+      left: 50%;
+      // So that the border appears
+      // I reckon that this could be turned into a mixin...
+      // but oh well
+      height: 0;
+      width: 0;
+      margin-left: -($dropdown-arrow-size);
+      border-left: $dropdown-arrow-size solid transparent;
+      border-right: $dropdown-arrow-size solid transparent;
+      border-bottom: $dropdown-arrow-size solid $dropdown-bg;
+    }
+
+    // We'll apply the border-radius to the li > a itself
+    // because we're not applying much styling to the dropdown menu
+    // container itself (`c-dropdown__menu`).
+    & > li {
+      > a {
+        display: block;
+        padding: $padding-base-vertical $padding-base-horizontal;
+        color: $gray--light;
+        background: $dropdown-bg;
+        // Some awesome small-elegant typography like the other ones
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: $font-size-small;
+        border-bottom: 1px solid $dropdown-border;
+
+        &:hover {
+          text-decoration: none;
+          color: #fff;
+          background: $dropdown-sub-bg;
+        }
+      }
+
+      &:first-child > a {
+        border-top-left-radius: $dropdown-border-radius;
+        border-top-right-radius: $dropdown-border-radius;
+      }
+
+      &:last-child > a {
+        // Remove bottom border
+        border-bottom: none;
+        border-bottom-left-radius: $dropdown-border-radius;
+        border-bottom-right-radius: $dropdown-border-radius;
+      }
+    }
   }
 }
