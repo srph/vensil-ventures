@@ -38,7 +38,7 @@ export default class About extends React.Component {
               <li className="about__card about__card--gray">
                 <div className="about__card__heading"> Video </div>
                 <div className="about__card__info">
-                  Tangina di ko na alam sasabihin ko.
+
                 </div>
               </li>
             </ul>
