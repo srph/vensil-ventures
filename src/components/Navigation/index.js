@@ -3,6 +3,7 @@ import bean from 'bean';
 import classnames from 'classnames';
 
 import Dropdown from '../Dropdown';
+import config from '../../config';
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -43,23 +44,21 @@ export default class Navigation extends React.Component {
 
           <ul className="nav__navbar nav__navbar--screen nav__navbar--right">
             <li>
-              <a href="#">
+              <a href={config.facebook}>
                 <i className="fa fa-thumbs-o-up" /> Like Us On Facebook
               </a>
             </li>
           </ul>
 
           <ul className="nav__navbar nav__navbar--mobile nav__navbar--right">
-            <li className="c-dropdown nav__navbar__item--no-border">
-              <Dropdown trigger={<a href="#">More</a>}>
-                <ul className="c-dropdown__menu c-dropdown__menu--right">
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Work</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Facebook</a></li>
-                </ul>
-              </Dropdown>
-            </li>
+            <Dropdown trigger={<a href="#">More</a>}>
+              <ul className="c-dropdown__menu c-dropdown__menu--right">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href={config.facebook}>Facebook</a></li>
+              </ul>
+            </Dropdown>
           </ul>
         </div>
       </nav>

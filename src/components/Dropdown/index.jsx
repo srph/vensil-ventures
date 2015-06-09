@@ -6,7 +6,10 @@ import cloneWithProps from 'react/lib/cloneWithProps';
 const ESC_KEY = 27;
 const TRIGGER_REF = Symbol();
 
-// Dropdown specific for ours
+// Dropdown specific for our case.
+// Unfortunately, our `render` function returns the `li`
+// because React doesn't support returning of multiple components.
+// http://stackoverflow.com/q/22287957/2698227
 export default class Dropdown extends React.Component {
   static propTypes = {
     /**
@@ -38,10 +41,10 @@ export default class Dropdown extends React.Component {
     let className = classnames({ 'c-dropdown__menu--open': open });
 
     return (
-      <span>
+      <li className="c-dropdown nav__navbar__item--no-border">
         {cloneWithProps(trigger, { ref: TRIGGER_REF })}
         {cloneWithProps(children, { className: className })}
-      </span>
+      </li>
     );
   }
 
