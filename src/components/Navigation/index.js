@@ -2,10 +2,6 @@ import React from 'react';
 import bean from 'bean';
 import classnames from 'classnames';
 
-// Allowance to `fix` the navbar
-// 50 == navbar height. check the css file in the same directory.
-const ALLOWANCE = 50;
-
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
@@ -28,14 +24,8 @@ export default class Navigation extends React.Component {
 
     let classname = classnames('nav', {
       'nav--sticky': fixed,
-      'nav--static-bottom': !fixed
+      'nav--static': !fixed
     });
-
-    let menu = classnames(
-      'c-dropdown__menu',
-      'c-dropdown__menu--right',
-      { 'c-dropdown__menu--dropup': !fixed }
-    );
 
     return (
       <nav className={classname} role="navigation">
@@ -60,7 +50,7 @@ export default class Navigation extends React.Component {
           <ul className="nav__navbar nav__navbar--mobile nav__navbar--right">
             <li className="c-dropdown nav__navbar__item--no-border">
               <a href="#">More</a>
-              <ul className={menu}>
+              <ul className="c-dropdown__menu c-dropdown__menu--right">
                 <li><a href="#">About</a></li>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -75,6 +65,6 @@ export default class Navigation extends React.Component {
 
   _handleScroll() {
     // Set navbar to fixed if it has exceeded .home
-    this.setState({ fixed: window.scrollY + ALLOWANCE >= window.innerHeight });
+    this.setState({ fixed: window.scrollY >= window.innerHeight });
   }
 }

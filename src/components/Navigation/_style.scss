@@ -10,6 +10,7 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
   height: $nav-height;
   width: 100%;
   background: $nav-bg-color;
+  border-bottom: 1px solid $gray--light;
   overflow: hidden;
   text-align: center;
   @include clearfix();
@@ -21,9 +22,20 @@ $nav-padding-horizontal: ($grid-gutter-width / 2);
   }
 
   // [M] Static bottom
-  &.nav--static-bottom {
+  // Modifies `nav__heading > a` and `nav__navbar > li > a`
+  &.nav--static {
+    // Some stylin!
+    background: transparent;
+    border: none;
+    // ---
     position: absolute;
-    bottom: 0;
+    top: 0;
+
+    // I'm still taking into consideration whether to place
+    // these modifier styling here, or place it beside the
+    // class itself
+    .nav__heading > a { color: #fff; }
+    .nav__navbar > li > a { color: #fff; }
   }
 
   .nav__container {
