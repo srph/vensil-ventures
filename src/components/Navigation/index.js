@@ -37,9 +37,9 @@ export default class Navigation extends React.Component {
             <a href="#">Vensil's Ventures</a>
           </div>
           <ul className="nav__navbar nav__navbar--screen">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
 
           <ul className="nav__navbar nav__navbar--screen nav__navbar--right">
