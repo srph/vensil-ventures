@@ -18,6 +18,12 @@ export default class Work extends React.Component {
             <CardColumnIota />
           </div>
         </div>
+
+        <div className="work__more-btn">
+          <a href="//facebook.com/vensilsventuresPHOTOBOOTH/photos_stream?tab=photos_albums" className="work__more-btn__element">
+            See More Photos
+          </a>
+        </div>
       </div>
     );
   }

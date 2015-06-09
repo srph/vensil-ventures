@@ -280,4 +280,24 @@ $work-container-padding: (($screen-md-min - ($work-card-size * $work-card-column
       font-size: $font-size-small;
     }
   }
+
+  // I'm testing whether which is more effective in naming:
+  // .work__more-btn-container // .work__more-btn
+  // vs.
+  // .work__more-btn // .work__more-btn-element
+  // This is hidden for mobile screens
+  .work__more-btn {
+    display: none;
+    margin-top: $handle-padding;
+    text-align: center;
+
+    @include media($screen) { display: block; }
+  }
+  .work__more-btn__element {
+    @include btn(true);
+    @include btn--variant(success, true);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: $font-size-small;
+  }
 }
