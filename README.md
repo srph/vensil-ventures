@@ -9,6 +9,39 @@ I've made countless experiments with Sass in this project. If you will, I have a
 
 Besides expressing my love for mixin, I have also yet to shout how `extend` is likeable. I noticed how some components would be better off *extended* (`@extend`) instead of *included as a mixin* (`@include`. I've noticed that *flexible* mixins are pretty hard to maintain. Although, I've seen a good way from Bourbon / Neat to make mixins flexible; semantics are easier to play with compared to arguments.
 
+**To nest or not to nest**. That is the question. It's arguable that overnesting (more than the ideal nest of 2) makes code unreadable.
+
+I experienced that making stuff farther (placing the selector stlying below the parent selector instead of being nested inside the selector) than it should've been makes the code unreadable.
+
+```scss
+.about {
+  .about__card { }
+  .about__card > .about__card__thumbnail { }
+  .about__card > .about__card__info {
+  .about__card > .about__card__info > .about__card__info__title { } 
+  .about__card > .about__card__info > .about__card__info__subtitle { }
+}
+```
+
+Nesting is awesome.
+
+```scss
+// Sometimes awesome
+.about {
+  .about__card {
+    > .about__card__thumbnaul { }
+    > .about__card__info {
+      > .about__card__info__title { } 
+      > .about__card__info__subtitle { }
+    }
+  }
+}
+
+But there's no code in the given example which makes it "easier" to read.
+
+Also, I realized that I'm using BEM. B-E-fucking-M. Why am I trying to use `>` when it's not even necessary?
+```
+
 ## Contribution
 Looking forward to contribute any bugs you found? Feel free to submit a PR or issue. Don't forget to check the [contribution guidelines](CONTRIBUTING.md).
 
