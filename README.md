@@ -36,11 +36,11 @@ Nesting is awesome.
     }
   }
 }
+```
 
 But there's no code in the given example which makes it "easier" to read.
 
 Also, I realized that I'm using BEM. B-E-fucking-M. Why am I trying to use `>` when it's not even necessary?
-```
 
 ## Contribution
 Looking forward to contribute any bugs you found? Feel free to submit a PR or issue. Don't forget to check the [contribution guidelines](CONTRIBUTING.md).
