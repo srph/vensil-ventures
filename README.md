@@ -47,3 +47,6 @@ Looking forward to contribute any bugs you found? Feel free to submit a PR or is
 
 ## Acknowledgement
 **vensils-ventures** © 2015+, Kier Borromeo (srph) and [Vensil's Ventures Photo Booth](https://www.facebook.com/vensilsventuresPHOTOBOOTH).
+
+## Previews
+[Mobile](preview-mobile.png) / [Desktop](preview.png)
